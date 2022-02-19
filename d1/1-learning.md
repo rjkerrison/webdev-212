@@ -17,7 +17,7 @@ If you are that person, you're the best.
 Often though, the best thing to do is to keep your own notes. One of the **most important things** about note taking is **the act of taking them**.
 You might find that you remember things _because_ you wrote them down.
 
-Autrefois, you might only remember that you wrote them down. Great! You'll go back to look at them.
+Parfois, you might only remember that you wrote them down. Great! You'll go back to look at them.
 
 Some people are strong organisers and will look through their notes, organise them, and reread them deliberately.
 
