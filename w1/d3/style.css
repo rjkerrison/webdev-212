@@ -42,3 +42,13 @@ section {
 .special a {
   color: rgba(211, 190, 69);
 }
+
+picture img {
+  display: block;
+  /* Let it be as wide as possible */
+  max-width: 100%;
+  /* Let it grow relative to its width */
+  height: auto;
+  /* Centre it */
+  margin: 0 auto;
+}
