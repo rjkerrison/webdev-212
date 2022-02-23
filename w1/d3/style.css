@@ -43,12 +43,15 @@ section {
   color: rgba(211, 190, 69);
 }
 
-picture img {
+picture {
   display: block;
+  /* Centre images inside picture */
+  text-align: center;
+}
+
+picture img {
   /* Let it be as wide as possible */
   max-width: 100%;
   /* Let it grow relative to its width */
   height: auto;
-  /* Centre it */
-  margin: 0 auto;
 }
