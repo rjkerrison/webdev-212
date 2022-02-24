@@ -19,3 +19,7 @@ const booksCount = libraryUsers.reduce(function (previousCount, currentUser) {
   return previousCount + currentUser.books.length
 }, 0)
 console.log(booksCount)
+
+// this can be handled
+// we just need our reducing function to handle the different types
+const items = [1, 2, 'Robin', 10, 'Hello']
