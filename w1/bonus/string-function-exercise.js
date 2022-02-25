@@ -34,6 +34,7 @@ rl.question('Guess a word: ', (value) => {
   /* BONUS BONUS: only allow guesses which are in the word list */
 
   rl.close()
+  console.log(`The word was '${randomWord}'`)
 })
 
 // How would you allow them to guess multiple times?
