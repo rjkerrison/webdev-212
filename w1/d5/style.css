@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Varela+Round&display=swap');
+
+h1 {
+  font-size: 6rem;
+  font-family: 'Gideon Roman', cursive;
+}
+body {
+  font-family: 'Varela Round', sans-serif;
+}
+
+p {
+  font-size: 3rem;
+}
+
+picture {
+  display: block;
+  /* Centre images inside picture */
+  text-align: center;
+}
+
+picture img {
+  /* Let it be as wide as possible */
+  max-width: 100%;
+  /* Let it grow relative to its width */
+  height: auto;
+}
