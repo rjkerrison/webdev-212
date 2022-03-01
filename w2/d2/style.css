@@ -51,6 +51,19 @@ p {
   font-size: 10rem;
   font-family: 'Paddington';
   margin: 0;
+  animation: sway 2.5s ease-in-out alternate infinite;
+}
+
+@keyframes sway {
+  0% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(0deg) scale(1.125);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
 }
 
 picture {
