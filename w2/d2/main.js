@@ -13,6 +13,13 @@ console.log('green', greenButton)
 const changeText = (newText) => {
   // 2. set the text content of that element to 'red'
   resultElement.textContent = newText
+
+  // When changing the text to a known class name,
+  // let's set that class
+  if (['red', 'green', 'yellow'].includes(newText)) {
+    resultElement.classList.remove('red', 'green', 'yellow')
+    resultElement.classList.add(newText)
+  }
 }
 
 // EVENT - add event listener

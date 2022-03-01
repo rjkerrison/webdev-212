@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Varela+Round&display=swap');
 
+@font-face {
+  font-family: 'Paddington';
+  src: url('../../fonts/Paddington.otf');
+}
+
 * {
   box-sizing: border-box;
 }
@@ -44,6 +49,7 @@ main {
 
 p {
   font-size: 10rem;
+  font-family: 'Paddington';
   margin: 0;
 }
 
@@ -77,6 +83,7 @@ ul > li {
 
 button {
   font-size: 6rem;
+  font-family: 'Paddington';
   padding: 1rem;
   border: none;
   box-shadow: 0 0.5rem 0.25rem hsla(0, 32%, 59%, 0.719);
@@ -97,6 +104,25 @@ button:hover {
 }
 #green {
   background-color: hsl(120, 58%, 60%);
+}
+.red,
+.yellow,
+.green {
+  background-color: rgba(0, 0, 0, 0.705);
+  width: min-content;
+  height: min-content;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.red {
+  color: hsl(0, 58%, 60%);
+}
+.yellow {
+  color: hsl(60, 58%, 60%);
+}
+.green {
+  color: hsl(120, 58%, 60%);
 }
 
 .container {
