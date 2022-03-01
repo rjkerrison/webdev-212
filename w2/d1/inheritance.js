@@ -46,6 +46,7 @@ class Hatchback extends Car {
   constructor(color, manufacturer, model) {
     // always be the first line in a subclass constructor
     super(color, manufacturer, model)
+    console.log('HELLO I AM CALLING THE CONSTRUCTOR FOR HATCHBACK')
     this.hasBoot = true
   }
 }
