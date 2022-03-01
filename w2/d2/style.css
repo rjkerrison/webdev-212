@@ -10,24 +10,23 @@
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: 4rem;
   font-family: 'Gideon Roman', cursive;
 }
 h2 {
-  font-size: 4rem;
+  font-size: 2rem;
 }
 body {
   font-family: 'Varela Round', sans-serif;
   padding: 2rem;
   background-image: url('https://img.besthqwallpapers.com/Uploads/7-12-2017/32365/paddington-2-bear-2017-movie-poster-adventure.jpg');
-}
-
-header {
-  height: 10vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 
 header h1 {
-  margin: 0;
+  margin: 1rem 0;
 }
 
 main {
@@ -38,6 +37,8 @@ main {
     hsla(0, 32%, 59%, 0.719),
     rgba(255, 255, 255, 0.541)
   );
+  /* Auto left-right margin makes blocks centred */
+  margin: 0 auto;
   width: 80vw;
   height: 60vh;
   text-align: center;
@@ -48,7 +49,7 @@ main {
 }
 
 p {
-  font-size: 10rem;
+  font-size: 6rem;
   font-family: 'Paddington';
   margin: 0;
   animation: sway 2.5s ease-in-out alternate infinite;
@@ -141,10 +142,10 @@ button:hover {
 .container {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .container > * {
-  flex: 20% 1 1;
+  flex: 20% 0 1;
 }
 
 /* Inline #1 | http://127.0.0.1:5502/w1/d5/selectors.html */

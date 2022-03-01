@@ -10,24 +10,21 @@ console.log('yellow', yellowButton)
 console.log('green', greenButton)
 
 // EFFECT (side effect/function/thing we want to happen)
-const changeText = (newText) => {
-  // 2. set the text content of that element to 'red'
+const changeText = (event) => {
+  const newText = event.target.getAttribute('data-hint')
+  const newClass = event.target.getAttribute('data-class')
+  // Set the text content of that element to the hint
   resultElement.textContent = newText
 
   // When changing the text to a known class name,
   // let's set that class
-  if (['red', 'green', 'yellow'].includes(newText)) {
-    resultElement.classList.remove('red', 'green', 'yellow')
-    resultElement.classList.add(newText)
+  if (newClass) {
+    resultElement.className = ''
+    resultElement.classList.add(newClass)
   }
 }
 
 // EVENT - add event listener
-redButton.addEventListener('click', () => changeText('red'))
-greenButton.addEventListener('click', () => changeText('green'))
-yellowButton.addEventListener('click', () => changeText('yellow'))
-
-// Let's go crazy and attach an event listener to everything
-document.addEventListener('click', function (event) {
-  changeText(event.target.textContent)
-})
+redButton.addEventListener('click', changeText)
+greenButton.addEventListener('click', changeText)
+yellowButton.addEventListener('click', changeText)

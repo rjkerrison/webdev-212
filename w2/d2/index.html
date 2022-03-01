@@ -9,15 +9,19 @@
   </head>
   <body>
     <header>
-      <h1>DOM in JS</h1>
+      <h1><code>querySelector</code> and <code>addEventListener</code></h1>
     </header>
     <main>
+      <p id="result">Hint</p>
       <div class="container">
-        <button id="red">Red</button>
-        <button id="yellow">Yellow</button>
-        <button id="green">Green</button>
+        <button id="red" data-class="red" data-hint="Take notes!">1</button>
+        <button id="yellow" data-class="yellow" data-hint="Ask questions!">
+          2
+        </button>
+        <button id="green" data-class="green" data-hint="Console log!">
+          3
+        </button>
       </div>
-      <p id="result">here</p>
     </main>
     <footer>&copy; Robin James Kerrison 2022</footer>
     <script src="./main.js"></script>
