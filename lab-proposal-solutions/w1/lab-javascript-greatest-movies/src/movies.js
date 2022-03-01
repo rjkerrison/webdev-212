@@ -4,6 +4,16 @@ function getAllDirectors(movies) {
   return movies.map((movie) => movie.director);
 }
 
+//! Bonus
+
+/*
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+
+function getAllDirectors(movies) {
+  return [...new Set(movies.map(movie => movie.director))]
+}
+*/
+
 // Iteration 1: Ordering by year - Order by year, ascending (in growing order)
 function orderByYear(movies) {
   /*
