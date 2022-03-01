@@ -17,18 +17,34 @@ body {
   background-image: url('https://img.besthqwallpapers.com/Uploads/7-12-2017/32365/paddington-2-bear-2017-movie-poster-adventure.jpg');
 }
 
+header {
+  height: 10vh;
+}
+
+header h1 {
+  margin: 0;
+}
+
 main {
+  padding: 1rem;
+  border-radius: 1rem;
   background-image: linear-gradient(
     45deg,
     hsla(0, 32%, 59%, 0.719),
     rgba(255, 255, 255, 0.541)
   );
   width: 80vw;
-  height: 80vh;
+  height: 60vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 p {
   font-size: 10rem;
+  margin: 0;
 }
 
 picture {
@@ -60,9 +76,36 @@ ul > li {
 }
 
 button {
-  font-size: 9rem;
-  background-color: red;
+  font-size: 6rem;
   padding: 1rem;
+  border: none;
+  box-shadow: 0 0.5rem 0.25rem hsla(0, 32%, 59%, 0.719);
+  border-radius: 1rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+button:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 1.5rem 0.5rem hsla(0, 32%, 59%, 0.719);
+}
+
+#red {
+  background-color: hsl(0, 58%, 60%);
+}
+#yellow {
+  background-color: hsl(60, 58%, 60%);
+}
+#green {
+  background-color: hsl(120, 58%, 60%);
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.container > * {
+  flex: 20% 1 1;
 }
 
 /* Inline #1 | http://127.0.0.1:5502/w1/d5/selectors.html */
