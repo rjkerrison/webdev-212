@@ -18,8 +18,10 @@ const buildClock = (element) => {
 const setTime = (targetTime, element) => {
   const millisecondsRemaining = targetTime - Date.now()
 
+  //   console.log(targetTime, 'millisecondsRemaining', millisecondsRemaining)
+
   const totalSeconds = Math.ceil(millisecondsRemaining / 1000)
-  const totalMinutes = Math.ceil(totalSeconds / 60)
+  const totalMinutes = Math.floor(totalSeconds / 60)
   const seconds = (totalSeconds % 60).toString().padStart(2, '0')
   const minutes = (totalMinutes % 60).toString().padStart(2, '0')
   const hours = Math.floor(totalMinutes / 60)

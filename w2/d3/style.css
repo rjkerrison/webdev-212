@@ -12,6 +12,8 @@
 h1 {
   font-size: 4rem;
   font-family: 'Gideon Roman', cursive;
+  margin: 1rem 0;
+  color: rgba(255, 255, 255, 0.8);
 }
 h2 {
   font-size: 2rem;
@@ -23,10 +25,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-}
-
-header h1 {
-  margin: 1rem 0;
 }
 
 main {
@@ -54,7 +52,7 @@ h2 {
 }
 
 p {
-  font-size: 2rem;
+  font-size: 3rem;
   font-family: 'Bodoni Antiqua';
   margin: 0;
 }
@@ -64,6 +62,10 @@ ol {
   padding: 0;
   margin: 0;
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @keyframes sway {
