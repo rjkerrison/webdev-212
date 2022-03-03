@@ -1,18 +1,27 @@
 const canvas = document.querySelector('canvas')
 const context = canvas.getContext('2d')
 
-// params are x, y of top left corner, width, height
-context.fillStyle = 'rgb(255, 128, 0)'
-context.fillRect(20, 50, 100, 200)
-context.fillStyle = 'rgb(25, 128, 0)'
-context.fillRect(220, 250, 100, 200)
+function drawEverythingElse() {
+  // params are x, y of top left corner, width, height
+  context.fillStyle = 'rgb(255, 128, 0)'
+  context.fillRect(20, 50, 100, 200)
+  context.fillStyle = 'rgb(25, 128, 0)'
+  context.fillRect(220, 250, 100, 200)
 
-context.lineWidth = 3
-context.strokeStyle = 'blue'
-context.strokeRect(200, 200, 20, 50)
+  context.lineWidth = 3
+  context.strokeStyle = 'blue'
+  context.strokeRect(200, 200, 20, 50)
 
-// remove the painted pixels
-context.clearRect(80, 100, 40, 40)
+  // remove the painted pixels
+  context.clearRect(80, 100, 40, 40)
+
+  buildPath()
+  drawCircle(250, 250, 50, 'blue')
+  drawSemicircle(350, 450, 20, 'purple')
+  drawUpSemicircle(250, 470, 20, 'violet')
+
+  strokeLine(50)
+}
 
 function clearCanvas() {
   context.clearRect(0, 0, canvas.width, canvas.height)
@@ -36,7 +45,6 @@ function buildPath() {
   context.stroke()
   context.fill()
 }
-buildPath()
 
 function drawCircle(x, y, radius, fillStyle) {
   context.beginPath()
@@ -74,8 +82,38 @@ function strokeLine(x) {
   context.stroke()
 }
 
-drawCircle(250, 250, 50, 'blue')
-drawSemicircle(350, 450, 20, 'purple')
-drawUpSemicircle(250, 470, 20, 'violet')
+class Bullet {
+  constructor(x, y) {
+    this.x = x
+    this.y = y
+  }
+  draw() {
+    drawCircle(this.x, this.y, 20, 'black')
+  }
+  move() {
+    if (this.y > 400) {
+      this.y = 50
+      this.x = 50
+    }
+    this.x += 1
+    this.y += 2
+  }
+}
 
-strokeLine(50)
+const bullet = new Bullet(60, 70)
+const bullet2 = new Bullet(170, 30)
+
+function moveCircle() {
+  // MOVE THINGS
+  bullet.move()
+  bullet2.move()
+  // When animating, clear the whole canvas
+  clearCanvas()
+  // draw anything "static"
+  drawEverythingElse()
+  // draw the animations
+  bullet.draw()
+  bullet2.draw()
+}
+
+setInterval(moveCircle, 50)
