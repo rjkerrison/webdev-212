@@ -5,6 +5,8 @@ const gridWidth = 10
 const gridHeight = 10
 const cells = []
 
+let score = 0
+
 // which CELL INDEX is the character at
 const initialPosition = 0
 let currentPosition = initialPosition
@@ -31,6 +33,14 @@ function showPlayer(classToAdd) {
   }
 }
 
+function showMarmalade(position) {
+  cells[position].classList.add('marmalade')
+}
+
+function eatMarmalade(position) {
+  cells[position].classList.add('eaten')
+}
+
 function removePlayer() {
   // Stop showing the player in the currentPosition
   cells[currentPosition].classList.remove('paddington', 'left')
@@ -45,7 +55,20 @@ function movePlayer(newPosition, classToAdd) {
   }
   removePlayer()
   currentPosition = newPosition
+
+  if (isUneatenMarmalade(newPosition)) {
+    score += 50
+    console.log('SCORE', score)
+    eatMarmalade(newPosition)
+  }
+  // Always show last
   showPlayer(classToAdd)
+}
+
+function isUneatenMarmalade(position) {
+  const isMarmalade = cells[position].classList.contains('marmalade')
+  const isEaten = cells[position].classList.contains('eaten')
+  return isMarmalade && !isEaten
 }
 
 // show initial position
@@ -75,3 +98,12 @@ document.addEventListener('keydown', function (event) {
       break
   }
 })
+
+function randomlyPlaceMarmalade() {
+  const randomPosition = Math.floor(Math.random() * cells.length)
+  showMarmalade(randomPosition)
+}
+
+for (let i = 0; i < Math.sqrt(gridWidth * gridHeight); i++) {
+  randomlyPlaceMarmalade()
+}
