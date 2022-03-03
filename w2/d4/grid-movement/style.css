@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+.grid {
+  display: flex;
+  height: 800px;
+  width: 800px;
+  flex-wrap: wrap;
+}
+
+.cell {
+  border: 1px solid green;
+  width: 80px;
+  height: 80px;
+}
+
+.paddington {
+  background: url('https://2.bp.blogspot.com/-kQFVZT-wee4/XFW4-K-crkI/AAAAAAAAI_U/60FpZ-gaeJEitxhvBev2gcI1xOUrVy1YwCLcBGAs/s1600/Paddington%2BTransparent.png');
+  background-size: contain;
+}
+.paddington.left {
+  transform: rotate(-90deg);
+}
