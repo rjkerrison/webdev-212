@@ -1,0 +1,89 @@
+[
+  {
+    "name": "Noa Ben Aziz",
+    "project1": {
+      "github": "https://github.com/noxthehuman/Project-1"
+    }
+  },
+  {
+    "name": "Léo Cheffi",
+    "project1": {
+      "github": "https://github.com/MrRinbex/Project-1"
+    }
+  },
+  {
+    "name": "Anh",
+    "project1": {
+      "github": "https://github.com/potapen/project1"
+    }
+  },
+  {
+    "name": "Alexandre Halley",
+    "project1": {
+      "github": "https://github.com/AlexLA92/goldenSnitch"
+    }
+  },
+  {
+    "name": "Akanksha Singh Pradhan",
+    "project1": {
+      "github": "https://github.com/Pradhan-90/Project1-Lady-Maria"
+    }
+  },
+  {
+    "name": "Brian",
+    "project1": {
+      "github": "https://github.com/42f/IRONHACK_project_00"
+    }
+  },
+  {
+    "name": "Ibrahim Benjelloun",
+    "project1": {
+      "github": "https://github.com/i-benjelloun/game-project/",
+      "deployment": "https://i-benjelloun.github.io/game-project/"
+    }
+  },
+  {
+    "name": "Marco Zampini",
+    "project1": {
+      "github": "https://github.com/marcozampini/sing-like-freddie"
+    }
+  },
+  {
+    "name": "Laurie Bruneau",
+    "project1": {
+      "github": "https://github.com/lb2718/project1"
+    }
+  },
+
+  {
+    "name": "Tristan",
+    "project1": {
+      "github": "https://github.com/bodywosh/project-one/",
+      "deployment": "https://bodywosh.github.io/project-one/"
+    }
+  },
+  {
+    "name": "Clément Ménassé",
+    "project1": {
+      "github": "https://github.com/cmenasse/project1"
+    }
+  },
+  {
+    "name": "Marco Muller"
+  },
+  {
+    "name": "Alex Rojas"
+  },
+  {
+    "name": "Alper Goker"
+  },
+  {
+    "name": "Matthieu Kellogg"
+  },
+  {
+    "name": "Gary Jesoph"
+  },
+  {
+    "name": "Hamdaoui Abdou"
+  }
+]
