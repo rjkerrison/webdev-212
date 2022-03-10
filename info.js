@@ -1,3 +1,4 @@
+const runner = require('child_process')
 const info = require('./info.json')
 
 const enhanceStudent = (student) => {
@@ -71,6 +72,11 @@ const help = (mode) => {
   console.log(`Unknown mode: ${mode}`)
 }
 
+const viewStudentProject = (student) => {
+  const url = student.projects[0].deployment
+  runner.exec(`open ${url}`)
+}
+
 const execute = () => {
   const args = process.argv.slice(2)
   const mode = args.shift()
@@ -90,6 +96,10 @@ const execute = () => {
       const students = info
       formatArg = args.shift()
       students.forEach((student) => console.log(format(student, formatArg)))
+      break
+    case 'view':
+      student = chooseRandomStudent()
+      viewStudentProject(student)
       break
     default:
       help(mode)
