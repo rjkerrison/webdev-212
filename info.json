@@ -1,84 +1,126 @@
 [
   {
     "name": "Noa Ben Aziz",
-    "project1": {
-      "github": "https://github.com/noxthehuman/Project-1"
-    }
+    "projects": [
+      {
+        "github": "noxthehuman/Project-1"
+      }
+    ]
   },
   {
     "name": "Léo Cheffi",
-    "project1": {
-      "github": "https://github.com/MrRinbex/Project-1"
-    }
+    "github": "MrRinbex",
+    "projects": [
+      {
+        "github": "MrRinbex/Project-1"
+      }
+    ]
   },
   {
     "name": "Anh",
-    "project1": {
-      "github": "https://github.com/potapen/project1"
-    }
+    "projects": [
+      {
+        "github": "potapen/project1"
+      }
+    ]
   },
   {
     "name": "Alexandre Halley",
-    "project1": {
-      "github": "https://github.com/AlexLA92/goldenSnitch"
-    }
+    "projects": [
+      {
+        "github": "AlexLA92/goldenSnitch"
+      }
+    ]
   },
   {
     "name": "Akanksha Singh Pradhan",
-    "project1": {
-      "github": "https://github.com/Pradhan-90/Project1-Lady-Maria"
-    }
+    "projects": [
+      {
+        "github": "Pradhan-90/Project1-Lady-Maria"
+      }
+    ]
   },
   {
     "name": "Brian",
-    "project1": {
-      "github": "https://github.com/42f/IRONHACK_project_00"
-    }
+    "projects": [
+      {
+        "github": "42f/IRONHACK_project_00"
+      }
+    ]
   },
   {
     "name": "Ibrahim Benjelloun",
-    "project1": {
-      "github": "https://github.com/i-benjelloun/game-project/",
-      "deployment": "https://i-benjelloun.github.io/game-project/"
-    }
+    "projects": [
+      {
+        "github": "i-benjelloun/game-project",
+        "deployment": "https://i-benjelloun.github.io/game-project/"
+      }
+    ]
   },
   {
     "name": "Marco Zampini",
-    "project1": {
-      "github": "https://github.com/marcozampini/sing-like-freddie"
-    }
+    "projects": [
+      {
+        "github": "marcozampini/sing-like-freddie"
+      }
+    ]
   },
   {
     "name": "Laurie Bruneau",
-    "project1": {
-      "github": "https://github.com/lb2718/project1"
-    }
+    "projects": [
+      {
+        "github": "lb2718/project1"
+      }
+    ]
   },
 
   {
     "name": "Tristan",
-    "project1": {
-      "github": "https://github.com/bodywosh/project-one/",
-      "deployment": "https://bodywosh.github.io/project-one/"
-    }
+    "projects": [
+      {
+        "github": "bodywosh/project-one",
+        "deployment": "https://bodywosh.github.io/project-one/"
+      }
+    ]
   },
   {
     "name": "Clément Ménassé",
-    "project1": {
-      "github": "https://github.com/cmenasse/project1"
-    }
+    "projects": [
+      {
+        "github": "cmenasse/project1"
+      }
+    ]
   },
   {
-    "name": "Marco Muller"
+    "name": "Marco Muller",
+    "projects": [
+      {
+        "github": "marco-mul/project-module1",
+        "deployment": "https://marco-mul.github.io/project-module1/"
+      }
+    ]
   },
   {
     "name": "Alex Rojas"
   },
   {
-    "name": "Alper Goker"
+    "name": "Alper Goker",
+    "github": "CodeArtisanDotDev",
+    "projects": [
+      {
+        "github": "CodeArtisanDotDev/ironhack-project-canvas-game",
+        "deployment": "https://codeartisandotdev.github.io/ironhack-project-canvas-game/"
+      }
+    ]
   },
   {
-    "name": "Matthieu Kellogg"
+    "name": "Matthieu Kellogg",
+    "projects": [
+      {
+        "github": "matthedud/Project1",
+        "deployment": "https://matthedud.github.io/Project1/"
+      }
+    ]
   },
   {
     "name": "Gary Jesoph"

@@ -1,5 +1,16 @@
 const info = require('./info.json')
 
+const enhanceStudent = (student) => {
+  if (student.github) {
+    student.github = {
+      username: student.github,
+      link: `https://github.com/${student.github}/`,
+    }
+  }
+}
+
+info.forEach(enhanceStudent)
+
 const chooseRandomStudent = () => {
   const index = Math.floor(Math.random() * info.length)
   return info[index]
@@ -16,6 +27,19 @@ const format = (student, formatArg) => {
   // e.g. name,project1.github
   if (!formatArg) {
     return student
+  }
+
+  if (formatArg === 'table') {
+    return [
+      student.name,
+      '',
+      'My Game',
+      `https://github.com/${
+        (student.projects && student.projects[0]?.github) || '???'
+      }/`,
+      '',
+      student.projects && student.projects[0]?.deployment,
+    ].join('\t')
   }
 
   const properties = formatArg.split(',')
@@ -50,6 +74,7 @@ const help = (mode) => {
 const execute = () => {
   const args = process.argv.slice(2)
   const mode = args.shift()
+  let student
 
   switch (mode) {
     case 'random':
@@ -59,6 +84,11 @@ const execute = () => {
     case 'search':
       student = searchStudents(args.shift())
       console.log(format(student, args.shift()))
+      break
+    case 'list':
+      const students = info
+      const formatArg = args.shift()
+      students.forEach((student) => console.log(format(student, formatArg)))
       break
     default:
       help(mode)
