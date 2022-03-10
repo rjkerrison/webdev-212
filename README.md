@@ -11,3 +11,23 @@ Your instructional team includes:
 - Robin James Kerrison
 - Pauline Bertrand
 - Florian Aube
+
+## Student info
+
+If you need student info, there's a little script.
+
+Try
+
+```
+node info.js list table
+```
+
+for a format that can be copied into Google sheets.
+
+Alternatively,
+
+```
+node info.js random name,projects.0.github
+```
+
+will output json with the chosen fields.

@@ -74,12 +74,13 @@ const help = (mode) => {
 const execute = () => {
   const args = process.argv.slice(2)
   const mode = args.shift()
-  let student
+  let student, formatArg
 
   switch (mode) {
     case 'random':
       student = chooseRandomStudent()
-      console.log(format(student, args))
+      formatArg = args.shift()
+      console.log(format(student, formatArg))
       break
     case 'search':
       student = searchStudents(args.shift())
@@ -87,7 +88,7 @@ const execute = () => {
       break
     case 'list':
       const students = info
-      const formatArg = args.shift()
+      formatArg = args.shift()
       students.forEach((student) => console.log(format(student, formatArg)))
       break
     default:
