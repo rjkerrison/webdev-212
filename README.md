@@ -19,7 +19,7 @@ If you need student info, there's a little script.
 Try
 
 ```
-node info.js list table
+./students.sh list table
 ```
 
 for a format that can be copied into Google sheets.
@@ -27,7 +27,15 @@ for a format that can be copied into Google sheets.
 Alternatively,
 
 ```
-node info.js random name,projects.0.github
+./students.sh random name,projects.0.github
 ```
 
 will output json with the chosen fields.
+
+### Viewing projects
+
+```
+./students.sh view
+```
+
+will choose a random student and open their project 1 deployment.
