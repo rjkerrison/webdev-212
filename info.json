@@ -52,8 +52,8 @@
     "name": "Ibrahim Benjelloun",
     "projects": [
       {
-        "github": "i-benjelloun/game-project",
-        "deployment": "https://i-benjelloun.github.io/game-project/"
+        "github": "i-benjelloun/Snake-game",
+        "deployment": "https://i-benjelloun.github.io/Snake-game/"
       }
     ]
   },
@@ -123,7 +123,13 @@
     ]
   },
   {
-    "name": "Gary Jesoph"
+    "name": "Gary Jesoph",
+    "projects": [
+      {
+        "github": "gary-j/Project1-CodeBreakerGame",
+        "deployment": "https://gary-j.github.io/Project1-CodeBreakerGame/"
+      }
+    ]
   },
   {
     "name": "Hamdaoui Abdou"
