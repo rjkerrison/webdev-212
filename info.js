@@ -92,9 +92,16 @@ const viewStudentProject = (student) => {
 
 const suspenseMessages = [
   `Thinking…`,
+  `🤔`,
   `Who's it going to be?`,
-  `Getting ready to choose`,
+  `Get excited!`,
+  `We're getting ready to choose…`,
+  `Consulting with known associates…`,
+  `Squaring a circle`,
+  `Planning a vacation 🏖`,
   `Adding suspense…`,
+  `Checking local weather…\n🌦🌦🌦`,
+  `Contacting the FBI`,
   `🥁 🥁 🥁 🥁 🥁`,
   `Almost there…`,
 ]
@@ -103,12 +110,12 @@ const addSuspense = async () => {
   let suspenseRemaining = 100
 
   while (suspenseRemaining > 0) {
-    const reduction = Math.floor(100 * Math.random())
+    const reduction = Math.floor(20 * Math.random())
     suspenseRemaining -= reduction
     const message =
       suspenseMessages[Math.floor(Math.random() * suspenseMessages.length)]
     console.log(message)
-    await sleep(500)
+    await sleep(250 * (2 + Math.floor(3 * Math.random())))
   }
 }
 

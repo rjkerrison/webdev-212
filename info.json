@@ -112,11 +112,11 @@
         "deployment": "https://marco-mul.github.io/project-module1/"
       }
     ],
-    "hasPresented": false
+    "hasPresented": true
   },
   {
     "name": "Alex Rojas",
-    "hasPresented": false
+    "hasPresented": true
   },
   {
     "name": "Alper Goker",
@@ -150,7 +150,7 @@
         "deployment": "https://gary-j.github.io/Project1-CodeBreakerGame/"
       }
     ],
-    "hasPresented": false
+    "hasPresented": true
   },
   {
     "name": "Hamdaoui Abdou",
