@@ -142,7 +142,7 @@
     "projects": [
       {
         "github": "CodeArtisanDotDev/ironhack-project-canvas-game",
-        "deployment": "https://codeartisandotdev.github.io/ironhack-project-canvas-game/"
+        "deployment": "https://ironhack.codeartisan.dev/"
       }
     ],
     "hasPresented": true
