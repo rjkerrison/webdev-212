@@ -1,20 +1,33 @@
 const runner = require('child_process')
+const fs = require('fs')
 const info = require('./info.json')
 
 const enhanceStudent = (student) => {
-  if (student.github) {
+  if (student.github && typeof student.github === 'string') {
     student.github = {
       username: student.github,
       link: `https://github.com/${student.github}/`,
     }
   }
 }
-
 info.forEach(enhanceStudent)
 
-const chooseRandomStudent = () => {
-  const index = Math.floor(Math.random() * info.length)
-  return info[index]
+const saveFile = () => {
+  const dump = JSON.stringify(info, null, 2)
+  fs.writeFile('./info.json', dump, function (err) {
+    if (err) {
+      return console.log(err)
+    }
+  })
+}
+
+const chooseRandomStudent = (filter) => {
+  let choices = info
+  if (filter) {
+    choices = info.filter(filter)
+  }
+  const index = Math.floor(Math.random() * choices.length)
+  return choices[index]
 }
 
 const searchStudents = (searchTerm) => {
@@ -77,12 +90,50 @@ const viewStudentProject = (student) => {
   runner.exec(`open ${url}`)
 }
 
-const execute = () => {
+const suspenseMessages = [
+  `Thinking…`,
+  `Who's it going to be?`,
+  `Getting ready to choose`,
+  `Adding suspense…`,
+  `🥁 🥁 🥁 🥁 🥁`,
+  `Almost there…`,
+]
+
+const addSuspense = async () => {
+  let suspenseRemaining = 100
+
+  while (suspenseRemaining > 0) {
+    const reduction = Math.floor(100 * Math.random())
+    suspenseRemaining -= reduction
+    const message =
+      suspenseMessages[Math.floor(Math.random() * suspenseMessages.length)]
+    console.log(message)
+    await sleep(500)
+  }
+}
+
+const sleep = (ms) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms)
+  })
+}
+
+const congratulate = (student) => {
+  console.log(`CONGRATULATIONS, ${student.name}! It's you!`)
+}
+
+const execute = async () => {
   const args = process.argv.slice(2)
   const mode = args.shift()
   let student, formatArg
 
   switch (mode) {
+    case 'suspense':
+      await addSuspense()
+      student = chooseRandomStudent((s) => !s.hasPresented)
+      student.hasPresented = true
+      congratulate(student)
+      break
     case 'random':
       student = chooseRandomStudent()
       formatArg = args.shift()
@@ -107,4 +158,4 @@ const execute = () => {
   }
 }
 
-execute()
+execute().then(saveFile)

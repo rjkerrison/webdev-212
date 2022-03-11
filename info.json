@@ -5,16 +5,21 @@
       {
         "github": "noxthehuman/Project-1"
       }
-    ]
+    ],
+    "hasPresented": true
   },
   {
     "name": "Léo Cheffi",
-    "github": "MrRinbex",
+    "github": {
+      "username": "MrRinbex",
+      "link": "https://github.com/MrRinbex/"
+    },
     "projects": [
       {
         "github": "MrRinbex/Project-1"
       }
-    ]
+    ],
+    "hasPresented": false
   },
   {
     "name": "Anh",
@@ -22,7 +27,8 @@
       {
         "github": "potapen/project1"
       }
-    ]
+    ],
+    "hasPresented": false
   },
   {
     "name": "Alexandre Halley",
@@ -30,7 +36,8 @@
       {
         "github": "AlexLA92/goldenSnitch"
       }
-    ]
+    ],
+    "hasPresented": false
   },
   {
     "name": "Akanksha Singh Pradhan",
@@ -38,7 +45,8 @@
       {
         "github": "Pradhan-90/Project1-Lady-Maria"
       }
-    ]
+    ],
+    "hasPresented": false
   },
   {
     "name": "Brian",
@@ -46,7 +54,8 @@
       {
         "github": "42f/IRONHACK_project_00"
       }
-    ]
+    ],
+    "hasPresented": false
   },
   {
     "name": "Ibrahim Benjelloun",
@@ -55,7 +64,8 @@
         "github": "i-benjelloun/Snake-game",
         "deployment": "https://i-benjelloun.github.io/Snake-game/"
       }
-    ]
+    ],
+    "hasPresented": false
   },
   {
     "name": "Marco Zampini",
@@ -63,7 +73,8 @@
       {
         "github": "marcozampini/sing-like-freddie"
       }
-    ]
+    ],
+    "hasPresented": false
   },
   {
     "name": "Laurie Bruneau",
@@ -71,9 +82,9 @@
       {
         "github": "lb2718/project1"
       }
-    ]
+    ],
+    "hasPresented": false
   },
-
   {
     "name": "Tristan",
     "projects": [
@@ -81,7 +92,8 @@
         "github": "bodywosh/project-one",
         "deployment": "https://bodywosh.github.io/project-one/"
       }
-    ]
+    ],
+    "hasPresented": true
   },
   {
     "name": "Clément Ménassé",
@@ -89,7 +101,8 @@
       {
         "github": "cmenasse/project1"
       }
-    ]
+    ],
+    "hasPresented": false
   },
   {
     "name": "Marco Muller",
@@ -98,20 +111,26 @@
         "github": "marco-mul/project-module1",
         "deployment": "https://marco-mul.github.io/project-module1/"
       }
-    ]
+    ],
+    "hasPresented": false
   },
   {
-    "name": "Alex Rojas"
+    "name": "Alex Rojas",
+    "hasPresented": false
   },
   {
     "name": "Alper Goker",
-    "github": "CodeArtisanDotDev",
+    "github": {
+      "username": "CodeArtisanDotDev",
+      "link": "https://github.com/CodeArtisanDotDev/"
+    },
     "projects": [
       {
         "github": "CodeArtisanDotDev/ironhack-project-canvas-game",
         "deployment": "https://codeartisandotdev.github.io/ironhack-project-canvas-game/"
       }
-    ]
+    ],
+    "hasPresented": false
   },
   {
     "name": "Matthieu Kellogg",
@@ -120,7 +139,8 @@
         "github": "matthedud/Project1",
         "deployment": "https://matthedud.github.io/Project1/"
       }
-    ]
+    ],
+    "hasPresented": false
   },
   {
     "name": "Gary Jesoph",
@@ -129,9 +149,11 @@
         "github": "gary-j/Project1-CodeBreakerGame",
         "deployment": "https://gary-j.github.io/Project1-CodeBreakerGame/"
       }
-    ]
+    ],
+    "hasPresented": false
   },
   {
-    "name": "Hamdaoui Abdou"
+    "name": "Hamdaoui Abdou",
+    "hasPresented": true
   }
 ]
