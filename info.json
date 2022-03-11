@@ -101,7 +101,7 @@
         "deployment": "https://bodywosh.github.io/project-one/"
       }
     ],
-    "hasPresented": true
+    "hasPresented": false
   },
   {
     "name": "Clément Ménassé",
@@ -111,7 +111,7 @@
         "deployment": "https://cmenasse.github.io/project1/"
       }
     ],
-    "hasPresented": false
+    "hasPresented": true
   },
   {
     "name": "Marco Muller",
@@ -145,7 +145,7 @@
         "deployment": "https://codeartisandotdev.github.io/ironhack-project-canvas-game/"
       }
     ],
-    "hasPresented": false
+    "hasPresented": true
   },
   {
     "name": "Matthieu Kellogg",
@@ -169,12 +169,12 @@
   },
   {
     "name": "Hamdaoui Abdou",
-    "hasPresented": true,
     "projects": [
       {
         "github": "yesabdou/Mosquito_game",
         "deployment": "https://yesabdou.github.io/Mosquito_game/"
       }
-    ]
+    ],
+    "hasPresented": false
   }
 ]
