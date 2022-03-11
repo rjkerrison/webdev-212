@@ -100,6 +100,12 @@ const suspenseMessages = [
   `Squaring a circle`,
   `Planning a vacation 🏖`,
   `Adding suspense…`,
+  'Opening a wormhole to a parallel universe',
+  'Solving the grandfather paradox',
+  'Thinking really, really hard',
+  'Notifying the Queen',
+  'Looking for Navigo',
+  'Evolving Pokémon…',
   `Checking local weather…\n🌦🌦🌦`,
   `Contacting the FBI`,
   `🥁 🥁 🥁 🥁 🥁`,
@@ -149,6 +155,10 @@ const execute = async () => {
     case 'search':
       student = searchStudents(args.shift())
       console.log(format(student, args.shift()))
+      break
+    case 'search-and-view':
+      student = searchStudents(args.shift())
+      viewStudentProject(student)
       break
     case 'list':
       const students = info

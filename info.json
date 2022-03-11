@@ -3,7 +3,8 @@
     "name": "Noa Ben Aziz",
     "projects": [
       {
-        "github": "noxthehuman/Project-1"
+        "github": "noxthehuman/Project-1",
+        "deployment": "https://noxthehuman.github.io/Project-1/BombGame.html"
       }
     ],
     "hasPresented": true
@@ -16,7 +17,8 @@
     },
     "projects": [
       {
-        "github": "MrRinbex/Project-1"
+        "github": "MrRinbex/Project-1",
+        "deployment": "https://MrRinbex.github.io/Project-1/"
       }
     ],
     "hasPresented": false
@@ -25,7 +27,8 @@
     "name": "Anh",
     "projects": [
       {
-        "github": "potapen/project1"
+        "github": "potapen/project1",
+        "deployment": "https://potapen.github.io/project1/"
       }
     ],
     "hasPresented": false
@@ -34,7 +37,8 @@
     "name": "Alexandre Halley",
     "projects": [
       {
-        "github": "AlexLA92/goldenSnitch"
+        "github": "AlexLA92/goldenSnitch",
+        "deployment": "https://alexla92.github.io/goldenSnitch/"
       }
     ],
     "hasPresented": false
@@ -43,19 +47,21 @@
     "name": "Akanksha Singh Pradhan",
     "projects": [
       {
-        "github": "Pradhan-90/Project1-Lady-Maria"
+        "github": "Pradhan-90/Project1-Lady-Maria",
+        "deployment": "https://Pradhan-90.github.io/Project1-Lady-Maria/"
       }
     ],
-    "hasPresented": false
+    "hasPresented": true
   },
   {
     "name": "Brian",
     "projects": [
       {
-        "github": "42f/IRONHACK_project_00"
+        "github": "42f/IRONHACK_project_00",
+        "deployment": "https://42f.github.io/IRONHACK_project_00/"
       }
     ],
-    "hasPresented": false
+    "hasPresented": true
   },
   {
     "name": "Ibrahim Benjelloun",
@@ -71,19 +77,21 @@
     "name": "Marco Zampini",
     "projects": [
       {
-        "github": "marcozampini/sing-like-freddie"
+        "github": "marcozampini/sing-like-freddie",
+        "deployment": "https://marcozampini.github.io/sing-like-freddie/"
       }
     ],
-    "hasPresented": false
+    "hasPresented": true
   },
   {
     "name": "Laurie Bruneau",
     "projects": [
       {
-        "github": "lb2718/project1"
+        "github": "lb2718/project1",
+        "deployment": "https://lb2718.github.io/project1/"
       }
     ],
-    "hasPresented": false
+    "hasPresented": true
   },
   {
     "name": "Tristan",
@@ -99,7 +107,8 @@
     "name": "Clément Ménassé",
     "projects": [
       {
-        "github": "cmenasse/project1"
+        "github": "cmenasse/project1",
+        "deployment": "https://cmenasse.github.io/project1/"
       }
     ],
     "hasPresented": false
@@ -116,6 +125,12 @@
   },
   {
     "name": "Alex Rojas",
+    "projects": [
+      {
+        "github": "JoxSalera/CONNECT4",
+        "deployment": "https://JoxSalera.github.io/CONNECT4"
+      }
+    ],
     "hasPresented": true
   },
   {
@@ -154,6 +169,12 @@
   },
   {
     "name": "Hamdaoui Abdou",
-    "hasPresented": true
+    "hasPresented": true,
+    "projects": [
+      {
+        "github": "yesabdou/Mosquito_game",
+        "deployment": "https://yesabdou.github.io/Mosquito_game/"
+      }
+    ]
   }
 ]
