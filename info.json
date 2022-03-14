@@ -4,10 +4,10 @@
     "projects": [
       {
         "github": "noxthehuman/Project-1",
-        "deployment": "https://noxthehuman.github.io/Project-1/BombGame.html"
+        "deployment": "https://noxthehuman.github.io/Project-1/BombGame.html",
+        "hasPresented": false
       }
-    ],
-    "hasPresented": false
+    ]
   },
   {
     "name": "Léo Cheffi",
@@ -18,120 +18,120 @@
     "projects": [
       {
         "github": "MrRinbex/Project-1",
-        "deployment": "https://MrRinbex.github.io/Project-1/"
+        "deployment": "https://MrRinbex.github.io/Project-1/",
+        "hasPresented": true
       }
-    ],
-    "hasPresented": true
+    ]
   },
   {
     "name": "Anh",
     "projects": [
       {
         "github": "potapen/project1",
-        "deployment": "https://potapen.github.io/project1/"
+        "deployment": "https://potapen.github.io/project1/",
+        "hasPresented": true
       }
-    ],
-    "hasPresented": true
+    ]
   },
   {
     "name": "Alexandre Halley",
     "projects": [
       {
         "github": "AlexLA92/goldenSnitch",
-        "deployment": "https://alexla92.github.io/goldenSnitch/"
+        "deployment": "https://alexla92.github.io/goldenSnitch/",
+        "hasPresented": true
       }
-    ],
-    "hasPresented": true
+    ]
   },
   {
     "name": "Akanksha Singh Pradhan",
     "projects": [
       {
         "github": "Pradhan-90/Project1-Lady-Maria",
-        "deployment": "https://Pradhan-90.github.io/Project1-Lady-Maria/"
+        "deployment": "https://Pradhan-90.github.io/Project1-Lady-Maria/",
+        "hasPresented": true
       }
-    ],
-    "hasPresented": true
+    ]
   },
   {
     "name": "Brian",
     "projects": [
       {
         "github": "42f/IRONHACK_project_00",
-        "deployment": "https://42f.github.io/IRONHACK_project_00/"
+        "deployment": "https://42f.github.io/IRONHACK_project_00/",
+        "hasPresented": true
       }
-    ],
-    "hasPresented": true
+    ]
   },
   {
     "name": "Ibrahim Benjelloun",
     "projects": [
       {
         "github": "i-benjelloun/Snake-game",
-        "deployment": "https://i-benjelloun.github.io/Snake-game/"
+        "deployment": "https://i-benjelloun.github.io/Snake-game/",
+        "hasPresented": true
       }
-    ],
-    "hasPresented": true
+    ]
   },
   {
     "name": "Marco Zampini",
     "projects": [
       {
         "github": "marcozampini/sing-like-freddie",
-        "deployment": "https://marcozampini.github.io/sing-like-freddie/"
+        "deployment": "https://marcozampini.github.io/sing-like-freddie/",
+        "hasPresented": true
       }
-    ],
-    "hasPresented": true
+    ]
   },
   {
     "name": "Laurie Bruneau",
     "projects": [
       {
         "github": "lb2718/project1",
-        "deployment": "https://lb2718.github.io/project1/"
+        "deployment": "https://lb2718.github.io/project1/",
+        "hasPresented": true
       }
-    ],
-    "hasPresented": true
+    ]
   },
   {
     "name": "Tristan",
     "projects": [
       {
         "github": "bodywosh/project-one",
-        "deployment": "https://bodywosh.github.io/project-one/"
+        "deployment": "https://bodywosh.github.io/project-one/",
+        "hasPresented": true
       }
-    ],
-    "hasPresented": true
+    ]
   },
   {
     "name": "Clément Ménassé",
     "projects": [
       {
         "github": "cmenasse/project1",
-        "deployment": "https://cmenasse.github.io/project1/"
+        "deployment": "https://cmenasse.github.io/project1/",
+        "hasPresented": true
       }
-    ],
-    "hasPresented": true
+    ]
   },
   {
     "name": "Marco Muller",
     "projects": [
       {
         "github": "marco-mul/project-module1",
-        "deployment": "https://marco-mul.github.io/project-module1/"
+        "deployment": "https://marco-mul.github.io/project-module1/",
+        "hasPresented": true
       }
-    ],
-    "hasPresented": true
+    ]
   },
   {
     "name": "Alex Rojas",
     "projects": [
       {
         "github": "JoxSalera/CONNECT4",
-        "deployment": "https://JoxSalera.github.io/CONNECT4"
+        "deployment": "https://JoxSalera.github.io/CONNECT4",
+        "hasPresented": true
       }
-    ],
-    "hasPresented": true
+    ]
   },
   {
     "name": "Alper Goker",
@@ -142,39 +142,39 @@
     "projects": [
       {
         "github": "CodeArtisanDotDev/ironhack-project-canvas-game",
-        "deployment": "https://ironhack.codeartisan.dev/"
+        "deployment": "https://ironhack.codeartisan.dev/",
+        "hasPresented": true
       }
-    ],
-    "hasPresented": true
+    ]
   },
   {
     "name": "Matthieu Kellogg",
     "projects": [
       {
         "github": "matthedud/Project1",
-        "deployment": "https://matthedud.github.io/Project1/"
+        "deployment": "https://matthedud.github.io/Project1/",
+        "hasPresented": true
       }
-    ],
-    "hasPresented": true
+    ]
   },
   {
     "name": "Gary Jesoph",
     "projects": [
       {
         "github": "gary-j/Project1-CodeBreakerGame",
-        "deployment": "https://gary-j.github.io/Project1-CodeBreakerGame/"
+        "deployment": "https://gary-j.github.io/Project1-CodeBreakerGame/",
+        "hasPresented": true
       }
-    ],
-    "hasPresented": true
+    ]
   },
   {
     "name": "Hamdaoui Abdou",
     "projects": [
       {
         "github": "yesabdou/Mosquito_game",
-        "deployment": "https://yesabdou.github.io/Mosquito_game/"
+        "deployment": "https://yesabdou.github.io/Mosquito_game/",
+        "hasPresented": true
       }
-    ],
-    "hasPresented": true
+    ]
   }
 ]

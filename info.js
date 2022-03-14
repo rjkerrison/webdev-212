@@ -176,6 +176,15 @@ const congratulate = (student) => {
   console.log(`CONGRATULATIONS, ${student.name}! It's you!`)
 }
 
+const evalProperty = (student, property) => {
+  try {
+    return eval(`const temp = ${JSON.stringify(student)}
+    temp${property}`)
+  } catch {
+    return `Error finding property ${property}`
+  }
+}
+
 const execute = async () => {
   const args = process.argv.slice(2)
   const mode = args.shift()
@@ -189,10 +198,15 @@ const execute = async () => {
       const groupSize = parseInt(args.shift())
       getRandomGroups(groupSize)
       break
+    case 'eval':
+      student = chooseRandomStudent()
+      const property = args.shift()
+      const result = evalProperty(student, property)
+      console.log(student, result)
+      break
     case 'suspense':
       await addSuspense()
       student = chooseRandomStudent((s) => !s.hasPresented)
-      student.hasPresented = true
       congratulate(student)
       break
     case 'random':
