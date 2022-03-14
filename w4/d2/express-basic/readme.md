@@ -59,3 +59,5 @@ We add the Handlebars package to our project with
 ```sh
 npm install hbs
 ```
+
+We then set the `"view engine"` for our express app, and we `.render()` the response. (See the code.)
