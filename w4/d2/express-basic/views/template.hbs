@@ -8,6 +8,8 @@
 </head>
 <body>
     <h1>Templated Page {{title}}</h1>
-    <p>This was made by {{author}}.</p>
+    {{#if author}}
+        <p>This was made by {{author}}.</p>
+    {{/if}}
 </body>
 </html>
