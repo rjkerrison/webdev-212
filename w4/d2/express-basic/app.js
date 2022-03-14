@@ -4,6 +4,9 @@ const express = require('express')
 // Express server will be handling requests and responses
 const app = express()
 
+// Static files
+app.use(express.static('public'))
+
 // our first Route
 app.get('/home', (request, response, next) => {
   console.log(request)

@@ -36,3 +36,15 @@ It should look like this:
 [nodemon] starting `node app.js`
 My first app listening on port 3000!
 ```
+
+## Serving static files
+
+What about images and things like that?
+
+We store them in a folder, usually called `public` or `assets` or `static` or something else like that.
+
+We serve them all as a folder of static files.
+
+## HTML Files
+
+We can send HTML files as a response to a request with `.sendFile()`.
