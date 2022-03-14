@@ -7,7 +7,7 @@
         "deployment": "https://noxthehuman.github.io/Project-1/BombGame.html"
       }
     ],
-    "hasPresented": true
+    "hasPresented": false
   },
   {
     "name": "Léo Cheffi",
@@ -21,7 +21,7 @@
         "deployment": "https://MrRinbex.github.io/Project-1/"
       }
     ],
-    "hasPresented": false
+    "hasPresented": true
   },
   {
     "name": "Anh",
@@ -31,7 +31,7 @@
         "deployment": "https://potapen.github.io/project1/"
       }
     ],
-    "hasPresented": false
+    "hasPresented": true
   },
   {
     "name": "Alexandre Halley",
@@ -41,7 +41,7 @@
         "deployment": "https://alexla92.github.io/goldenSnitch/"
       }
     ],
-    "hasPresented": false
+    "hasPresented": true
   },
   {
     "name": "Akanksha Singh Pradhan",
@@ -71,7 +71,7 @@
         "deployment": "https://i-benjelloun.github.io/Snake-game/"
       }
     ],
-    "hasPresented": false
+    "hasPresented": true
   },
   {
     "name": "Marco Zampini",
@@ -101,7 +101,7 @@
         "deployment": "https://bodywosh.github.io/project-one/"
       }
     ],
-    "hasPresented": false
+    "hasPresented": true
   },
   {
     "name": "Clément Ménassé",
@@ -155,7 +155,7 @@
         "deployment": "https://matthedud.github.io/Project1/"
       }
     ],
-    "hasPresented": false
+    "hasPresented": true
   },
   {
     "name": "Gary Jesoph",
@@ -175,6 +175,6 @@
         "deployment": "https://yesabdou.github.io/Mosquito_game/"
       }
     ],
-    "hasPresented": false
+    "hasPresented": true
   }
 ]
