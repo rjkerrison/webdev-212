@@ -39,3 +39,13 @@ will output json with the chosen fields.
 ```
 
 will choose a random student and open their project 1 deployment.
+
+## Generating groups
+
+```sh
+./students.sh groups 2
+```
+
+This will generate pairs. Change the number, change the group size.
+
+The last group may be smaller — handle this manually for now.

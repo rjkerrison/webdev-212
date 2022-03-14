@@ -163,8 +163,8 @@ const splitIntoGroups = function* (array, groupSize) {
   }
 }
 
-const getRandomPairs = () => {
-  Array.from(splitIntoGroups(fisherYatesShuffle(...info), 2)).forEach(
+const getRandomGroups = (size) => {
+  Array.from(splitIntoGroups(fisherYatesShuffle(...info), size)).forEach(
     (group, i) => {
       const names = group.map((s) => s.name)
       console.log(`Group ${i + 1}: ${names.join(', ')}`)
@@ -183,7 +183,11 @@ const execute = async () => {
 
   switch (mode) {
     case 'pairs':
-      getRandomPairs()
+      getRandomGroups(2)
+      break
+    case 'groups':
+      const groupSize = parseInt(args.shift())
+      getRandomGroups(groupSize)
       break
     case 'suspense':
       await addSuspense()
