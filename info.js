@@ -37,6 +37,8 @@ const searchStudents = (searchTerm) => {
   return student
 }
 
+const githubUrl = (githubRef) => `https://github.com/${githubRef}/`
+
 const format = (student, formatArg) => {
   // e.g. name,project1.github
   if (!formatArg) {
@@ -48,9 +50,7 @@ const format = (student, formatArg) => {
       student.name,
       '',
       'My Game',
-      `https://github.com/${
-        (student.projects && student.projects[0]?.github) || '???'
-      }/`,
+      githubUrl((student.projects && student.projects[0]?.github) || '???'),
       '',
       student.projects && student.projects[0]?.deployment,
     ].join('\t')
@@ -86,7 +86,7 @@ const help = (mode) => {
 }
 
 const viewStudentProject = (student) => {
-  const url = student.projects[0].deployment
+  const url = githubUrl(student.projects[0].github)
   runner.exec(`open ${url}`)
 }
 
@@ -135,6 +135,43 @@ const sleep = (ms) => {
   })
 }
 
+const fisherYatesShuffle = (...array) => {
+  let currentIndex = array.length
+  let temporaryValue, randomIndex
+
+  // While there remain elements to shuffle...
+  while (currentIndex > 0) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex)
+    currentIndex -= 1
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex]
+    array[currentIndex] = array[randomIndex]
+    array[randomIndex] = temporaryValue
+  }
+
+  return array
+}
+
+const splitIntoGroups = function* (array, groupSize) {
+  let index = 0
+
+  while (index < array.length) {
+    yield array.slice(index, index + groupSize)
+    index += groupSize
+  }
+}
+
+const getRandomPairs = () => {
+  Array.from(splitIntoGroups(fisherYatesShuffle(...info), 2)).forEach(
+    (group, i) => {
+      const names = group.map((s) => s.name)
+      console.log(`Group ${i + 1}: ${names.join(', ')}`)
+    }
+  )
+}
+
 const congratulate = (student) => {
   console.log(`CONGRATULATIONS, ${student.name}! It's you!`)
 }
@@ -145,6 +182,9 @@ const execute = async () => {
   let student, formatArg
 
   switch (mode) {
+    case 'pairs':
+      getRandomPairs()
+      break
     case 'suspense':
       await addSuspense()
       student = chooseRandomStudent((s) => !s.hasPresented)
