@@ -7,7 +7,7 @@ const app = express()
 // our first Route
 app.get('/home', (request, response, next) => {
   console.log(request)
-  response.send('<h1>Our favourite bear</h1>')
+  response.send('<h1>Our first express app</h1>')
 })
 
 // Server Started
