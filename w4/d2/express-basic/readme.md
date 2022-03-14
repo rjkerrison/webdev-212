@@ -48,3 +48,8 @@ We serve them all as a folder of static files.
 ## HTML Files
 
 We can send HTML files as a response to a request with `.sendFile()`.
+
+## Dynamic content
+
+Using a templating framework called _Handlebars_, we can have views with dynamic content.
+This idea of templating is a foundational idea behind many web frameworks for many technology stacks (Django in Python, Ruby on Rails, .NETFramework for C#, ReactJS, VueJS, many, many others).
