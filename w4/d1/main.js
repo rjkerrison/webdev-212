@@ -29,6 +29,10 @@ function updateWeatherInfo(city) {
         2
       )} degrees Celsius.`
     })
+    .catch((exception) => {
+      console.error(exception)
+      return `DID NOT WORK: ${exception}`
+    })
 }
 
 updateWeatherInfo('Bahrain')
