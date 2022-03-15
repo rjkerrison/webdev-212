@@ -2,3 +2,11 @@
 {{#if author}}
     <p>This was made by {{author}}.</p>
 {{/if}}
+
+<ul>
+{{#each persons}}
+    <li>
+        {{> personCard }}
+    </li>
+{{/each}}
+</ul>

@@ -1,4 +1,5 @@
 const express = require('express')
+const hbs = require('hbs')
 
 // We create our own server named app
 // Express server will be handling requests and responses
@@ -10,6 +11,9 @@ app.set('view engine', 'hbs')
 
 // Static files
 app.use(express.static('public'))
+
+// We'll render partials, but first we need to tell hbs where they are
+hbs.registerPartials(__dirname + '/views/partials')
 
 // reloading the browser on change — this is for development purposes only!
 app.use(
@@ -34,6 +38,7 @@ app.get('/about', (request, response, next) => {
   const data = {
     title: 'About',
     author: 'Robin James Kerrison',
+    persons: [{ name: 'Robin' }, { name: 'Pauline' }],
   }
 
   response.render('template', data)
