@@ -37,6 +37,20 @@ It should look like this:
 My first app listening on port 3000!
 ```
 
+### Reloading the browser
+
+If you want the browser to reload, we'll need to connect the browser to a script that can force a reload when necessary.
+We should only ever do this in a development environment — never on the production (that means the public) deployment environment.
+
+Nonetheless, there's an example of this in the `package.json`.
+When we run
+
+```sh
+npm run live
+```
+
+We'll start both the `nodemon` process that restarts our server, and a separate `livereload` service that can tell our browser to refresh.
+
 ## Serving static files
 
 What about images and things like that?

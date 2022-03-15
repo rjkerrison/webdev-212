@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "live": "npx nodemon app.js & npx livereload -p 35729 -w 500"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "connect-livereload": "^0.6.1",
     "express": "^4.17.3",
     "hbs": "^4.2.0"
   }

@@ -11,6 +11,13 @@ app.set('view engine', 'hbs')
 // Static files
 app.use(express.static('public'))
 
+// reloading the browser on change — this is for development purposes only!
+app.use(
+  require('connect-livereload')({
+    port: 35729,
+  })
+)
+
 // our first Route
 app.get('/home', (request, response, next) => {
   console.log(request)
