@@ -33,4 +33,15 @@ async function createCinema(request, response, next) {
   })
 }
 
-export { getCinemas, createCinema }
+async function getCinema(request, response, next) {
+  const id = request.params.id
+
+  const cinema = await Cinema.findById(id)
+  console.log(cinema)
+
+  response.render('cinema', {
+    cinema,
+  })
+}
+
+export { getCinemas, createCinema, getCinema }

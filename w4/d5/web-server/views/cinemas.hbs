@@ -4,7 +4,9 @@
 <ul>
   {{#each cinemas}}
     <li>
-      {{this.name}}
+      <a href='/cinemas/{{this._id}}'>
+        {{this.name}}
+      </a>
     </li>
   {{/each}}
 </ul>

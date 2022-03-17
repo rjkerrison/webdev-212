@@ -1,0 +1,43 @@
+<h2>
+  Cinema:
+  {{this.name}}
+</h2>
+<p>
+  The cinema
+  {{cinema.name}}
+  is in
+  {{cinema.address.city}}
+  {{cinema.address.postalCode}}.
+</p>
+<h3>
+  Edit Form
+</h3>
+<form action='/cinemas/{{cinema._id}}' method='PATCH'>
+  <label for='name'>
+    Name
+  </label>
+  <input
+    type='text'
+    name='name'
+    id='name'
+    placeholder='e.g. MK2 Beaubourg'
+    value='{{cinema.name}}'
+  />
+  <label for='city'>City</label>
+  <input
+    type='text'
+    name='city'
+    id='city'
+    placeholder='e.g. Paris'
+    value='{{cinema.address.city}}'
+  />
+  <label for='postalCode'>Postal Code</label>
+  <input
+    type='text'
+    name='postalCode'
+    id='postalCode'
+    placeholder='e.g. 75001'
+    value='{{cinema.address.postalCode}}'
+  />
+  <input type='submit' value='Edit Cinema' />
+</form>

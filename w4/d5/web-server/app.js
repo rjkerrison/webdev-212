@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import express from 'express'
 
-import { getCinemas, createCinema } from './controllers/cinema.js'
+import { getCinemas, createCinema, getCinema } from './controllers/cinema.js'
 
 mongoose.connect('mongodb://localhost:27017/webdev')
 
@@ -17,6 +17,7 @@ app.set('view engine', 'hbs')
 // Set up routes
 app.get('/cinemas', getCinemas)
 app.post('/cinemas', createCinema)
+app.get('/cinemas/:id', getCinema)
 
 // We're ready to listen
 app.listen('3000', () => console.log('listening'))
