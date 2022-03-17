@@ -1,10 +1,29 @@
 <h2>
-    Cinemas
+  Cinemas
 </h2>
 <ul>
-    {{#each cinemas}}
-        <li>
-            {{this.name}}
-        </li>
-    {{/each}}
+  {{#each cinemas}}
+    <li>
+      {{this.name}}
+    </li>
+  {{/each}}
 </ul>
+<h3>
+  New Form
+</h3>
+<form action='/cinemas' method='POST'>
+  <label for='name'>
+    Name
+  </label>
+  <input type='text' name='name' id='name' placeholder='e.g. MK2 Beaubourg' />
+  <label for='city'>City</label>
+  <input type='text' name='city' id='city' placeholder='e.g. Paris' />
+  <label for='postalCode'>Postal Code</label>
+  <input
+    type='text'
+    name='postalCode'
+    id='postalCode'
+    placeholder='e.g. Paris'
+  />
+  <input type='submit' value='Add Cinema' />
+</form>

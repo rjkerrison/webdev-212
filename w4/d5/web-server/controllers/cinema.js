@@ -8,4 +8,29 @@ async function getCinemas(request, response, next) {
   })
 }
 
-export { getCinemas }
+async function createCinema(request, response, next) {
+  // grab the data from the body
+  const { name, city, postalCode } = request.body
+  // build our data to add into our database
+  const cinemaToCreate = {
+    name,
+    address: {
+      city,
+      postalCode,
+    },
+  }
+
+  // add into db
+  const createdCinema = await Cinema.create(cinemaToCreate)
+  console.log(createdCinema)
+
+  // gather the updated list
+  const cinemas = await Cinema.find()
+
+  // show the result
+  response.render('cinemas', {
+    cinemas,
+  })
+}
+
+export { getCinemas, createCinema }
