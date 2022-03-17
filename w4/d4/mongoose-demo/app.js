@@ -10,34 +10,39 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema)
 
 // define the schema
-const tweetSchema = new mongoose.Schema({
-  content: String,
-  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-})
+const tweetSchema = new mongoose.Schema(
+  {
+    content: String,
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  },
+  // We can specify that we want automatic timestamps (createdAt, updatedAt)
+  { timestamps: true }
+)
 // create the model (and the collection)
 const Tweet = mongoose.model('Tweet', tweetSchema)
 
-function createUserAndTweet() {
+function createUserAndTweet(username) {
   const newUserPromise = User.create({
-    username: 'pauline',
-    email: 'pauline.bertrand@ironhack.com',
+    username: username,
+    email: 'example@ironhack.com',
   })
 
-  newUserPromise
-    .then((user) => tweet(user))
+  return newUserPromise
+    .then((user) => createTweet(user))
     .then((newTweet) => console.log(newTweet))
 }
+
 async function findUserAndTweet(username) {
   const foundUser = await User.findOne({ username: username })
   if (!foundUser) {
     console.error('could not find', username)
     return
   }
-  const newTweet = await tweet(foundUser)
+  const newTweet = await createTweet(foundUser)
   console.log(newTweet)
 }
 
-async function tweet(user) {
+async function createTweet(user) {
   console.log('user is', user)
   const newTweet = await Tweet.create({
     content: 'hi guys just joined twitter, so excited, wow',
@@ -50,4 +55,21 @@ function getAllTweets() {
   Tweet.find().populate('user').then(console.log)
 }
 
-findUserAndTweet('brianval')
+async function editMostRecentTweet(username, content) {
+  // We'll have to get the user's id from their username
+  const user = await User.findOne({ username: username })
+
+  // We specify how to find the tweet, and how to modify it
+  const mostRecentTweet = await Tweet.findOne({
+    user: user._id,
+  }).sort({
+    createdAt: -1,
+  })
+
+  // Let's update that tweet!
+  const updateInfo = await mostRecentTweet.update({ content: content })
+
+  console.log(mostRecentTweet, updateInfo)
+}
+
+editMostRecentTweet('bob', 'hey this is my edited tweet')
