@@ -18,22 +18,36 @@ const tweetSchema = new mongoose.Schema({
 const Tweet = mongoose.model('Tweet', tweetSchema)
 
 function createUserAndTweet() {
-  const newUser = User.create({
-    username: 'rjkerrison',
-    email: 'robin.kerrison@ironhack.com',
+  const newUserPromise = User.create({
+    username: 'pauline',
+    email: 'pauline.bertrand@ironhack.com',
   })
 
-  newUser.then(tweet)
+  newUserPromise
+    .then((user) => tweet(user))
+    .then((newTweet) => console.log(newTweet))
+}
+async function findUserAndTweet(username) {
+  const foundUser = await User.findOne({ username: username })
+  if (!foundUser) {
+    console.error('could not find', username)
+    return
+  }
+  const newTweet = await tweet(foundUser)
+  console.log(newTweet)
 }
 
-function tweet(user) {
-  Tweet.create({
+async function tweet(user) {
+  console.log('user is', user)
+  const newTweet = await Tweet.create({
     content: 'hi guys just joined twitter, so excited, wow',
     user: user._id,
-  }).then(console.log)
+  })
+  return newTweet
 }
 
 function getAllTweets() {
   Tweet.find().populate('user').then(console.log)
 }
-getAllTweets()
+
+findUserAndTweet('brianval')
