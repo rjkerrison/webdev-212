@@ -1,6 +1,6 @@
 <h2>
   Cinema:
-  {{this.name}}
+  {{cinema.name}}
 </h2>
 <p>
   The cinema
@@ -12,7 +12,7 @@
 <h3>
   Edit Form
 </h3>
-<form action='/cinemas/{{cinema._id}}' method='PATCH'>
+<form action='/cinemas/{{cinema._id}}' method='POST'>
   <label for='name'>
     Name
   </label>

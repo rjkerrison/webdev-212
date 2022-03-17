@@ -8,18 +8,22 @@ async function getCinemas(request, response, next) {
   })
 }
 
-async function createCinema(request, response, next) {
+function cinemaFromRequestBody(request) {
   // grab the data from the body
   const { name, city, postalCode } = request.body
   // build our data to add into our database
-  const cinemaToCreate = {
+  const cinema = {
     name,
     address: {
       city,
       postalCode,
     },
   }
+  return cinema
+}
 
+async function createCinema(request, response, next) {
+  const cinemaToCreate = cinemaFromRequestBody(request)
   // add into db
   const createdCinema = await Cinema.create(cinemaToCreate)
   console.log(createdCinema)
@@ -34,14 +38,27 @@ async function createCinema(request, response, next) {
 }
 
 async function getCinema(request, response, next) {
+  console.log('getting cinema')
   const id = request.params.id
-
   const cinema = await Cinema.findById(id)
-  console.log(cinema)
 
   response.render('cinema', {
     cinema,
   })
 }
 
-export { getCinemas, createCinema, getCinema }
+async function editCinema(request, response, next) {
+  console.log('editing cinema')
+  const id = request.params.id
+  const cinemaUpdate = cinemaFromRequestBody(request)
+
+  const cinema = await Cinema.findByIdAndUpdate(id, cinemaUpdate, { new: true })
+
+  console.log({ cinema, cinemaUpdate })
+
+  response.render('cinema', {
+    cinema,
+  })
+}
+
+export { getCinemas, createCinema, getCinema, editCinema }
