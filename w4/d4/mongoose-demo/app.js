@@ -72,4 +72,18 @@ async function editMostRecentTweet(username, content) {
   console.log(mostRecentTweet, updateInfo)
 }
 
-editMostRecentTweet('bob', 'hey this is my edited tweet')
+async function editUserEmail(username, newEmail) {
+  // We'll have to get the user's id from their username
+  const user = await User.findOne({ username: username })
+  // Update that email address!
+  await user.update({ email: newEmail })
+}
+
+// When everything is finished...
+Promise.all([
+  editMostRecentTweet('bob', 'hey this is my edited tweet'),
+  editUserEmail('bob', 'bob@bobmail.bob'),
+]).then(
+  // ...we close the connection
+  () => mongoose.connection.close()
+)
