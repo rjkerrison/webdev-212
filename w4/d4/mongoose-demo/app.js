@@ -79,10 +79,15 @@ async function editUserEmail(username, newEmail) {
   await user.update({ email: newEmail })
 }
 
+async function deleteAllUsersWithUsername(username) {
+  await User.deleteMany({ username: username })
+}
+
 // When everything is finished...
 Promise.all([
   editMostRecentTweet('bob', 'hey this is my edited tweet'),
   editUserEmail('bob', 'bob@bobmail.bob'),
+  deleteAllUsersWithUsername('rjkerrison'),
 ]).then(
   // ...we close the connection
   () => mongoose.connection.close()
