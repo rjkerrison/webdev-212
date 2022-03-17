@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost:27017/webdev')
 
 const userSchema = new mongoose.Schema({
-  username: String,
+  username: { type: String, unique: true },
   email: String,
 })
 
@@ -28,7 +28,10 @@ function createUserAndTweet(username) {
   })
 
   return newUserPromise
-    .then((user) => createTweet(user))
+    .then((user) => {
+      console.log('new user created', user)
+      return createTweet(user)
+    })
     .then((newTweet) => console.log(newTweet))
 }
 
@@ -74,9 +77,10 @@ async function editMostRecentTweet(username, content) {
 
 async function editUserEmail(username, newEmail) {
   // We'll have to get the user's id from their username
-  const user = await User.findOne({ username: username })
   // Update that email address!
-  await user.update({ email: newEmail })
+  const user = await User.updateOne({ username: username }, { email: newEmail })
+  // this will show the old user object before the update
+  console.log(user)
 }
 
 async function deleteAllUsersWithUsername(username) {
@@ -85,9 +89,10 @@ async function deleteAllUsersWithUsername(username) {
 
 // When everything is finished...
 Promise.all([
-  editMostRecentTweet('bob', 'hey this is my edited tweet'),
-  editUserEmail('bob', 'bob@bobmail.bob'),
-  deleteAllUsersWithUsername('rjkerrison'),
+  // editMostRecentTweet('bob', 'hey this is my edited tweet'),
+  // editUserEmail('pauline', 'pauline@bobmail.bob'),
+  // deleteAllUsersWithUsername('rjkerrison'),
+  createUserAndTweet('bob'),
 ]).then(
   // ...we close the connection
   () => mongoose.connection.close()
