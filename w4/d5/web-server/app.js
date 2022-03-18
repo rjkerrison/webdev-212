@@ -6,6 +6,7 @@ import {
   createCinema,
   getCinema,
   editCinema,
+  searchCinemas,
 } from './controllers/cinema.js'
 
 mongoose.connect('mongodb://localhost:27017/webdev')
@@ -24,6 +25,7 @@ app.get('/cinemas', getCinemas)
 app.post('/cinemas', createCinema)
 app.get('/cinemas/:id', getCinema)
 app.post('/cinemas/:id', editCinema)
+app.get('/search', searchCinemas)
 
 // We're ready to listen
 app.listen('3000', () => console.log('listening'))

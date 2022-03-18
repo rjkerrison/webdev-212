@@ -1,0 +1,23 @@
+<h2>
+  Search results:
+  {{cinemas.length}}
+</h2>
+<ul>
+  {{#each cinemas}}
+    <li>
+      <a href='/cinemas/{{this._id}}'>
+        {{this.name}}
+      </a>
+    </li>
+  {{/each}}
+</ul>
+<h3>
+  Search form
+</h3>
+<form action='/search' method='GET'>
+  <label for='q'>
+    Search
+  </label>
+  <input type='text' name='q' id='q' placeholder='e.g. "MK2"' value='{{q}}' />
+  <input type='submit' value='Search Cinemas' />
+</form>

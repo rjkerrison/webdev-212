@@ -61,4 +61,18 @@ async function editCinema(request, response, next) {
   })
 }
 
-export { getCinemas, createCinema, getCinema, editCinema }
+async function searchCinemas(request, response, next) {
+  console.log('editing cinema')
+  const { q } = request.query
+
+  const cinemas = await Cinema.find({ name: new RegExp(q, 'i') })
+
+  console.log({ cinemas })
+
+  response.render('search', {
+    cinemas,
+    q,
+  })
+}
+
+export { getCinemas, createCinema, getCinema, editCinema, searchCinemas }
