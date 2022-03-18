@@ -50,7 +50,23 @@ I'll code for 15 minutes; we'll then have 15 minutes for catching up.
    1. which has an `:id` request parameter
    2. and calls the new controller
 
+## Search functionality
+
+1. Add a new view
+   1. which displays cinemas
+   2. which has a search form
+      1. which has a `GET` method
+      2. and an action of `/search`
+2. Add a new controller
+   1. which gets a `q` query parameter
+   2. which finds matching cinemas
+   3. which renders the search view with the matching cinemas
+3. Add a new route
+   1. which has a `GET` method
+   2. and a path of `/search`
+   3. and is handled by the new search controller
+
 ## Troubleshooting / Common Errors
 
-1. If you see `Cannot GET /cinemas` or `Cannot POST /cinemas` etc, it means that you have forgotten to add a route in your `app.js`.
-2. If you see a console error in your terminal about a missing view, it means you've forgotten to create a `.hbs` file in your `views` folder
+2.  If you see `Cannot GET /cinemas` or `Cannot POST /cinemas` etc, it means that you have forgotten to add a route in your `app.js`.
+3.  If you see a console error in your terminal about a missing view, it means you've forgotten to create a `.hbs` file in your `views` folder
