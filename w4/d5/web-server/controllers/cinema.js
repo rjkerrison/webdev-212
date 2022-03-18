@@ -63,7 +63,7 @@ async function editCinema(request, response, next) {
 
 async function searchCinemas(request, response, next) {
   console.log('editing cinema')
-  const { q } = request.query
+  const { q = '' } = request.query
 
   const searchTerms = q.split(' ').map((word) => new RegExp(word, 'i'))
   const cinemas = await Cinema.find({
