@@ -65,7 +65,14 @@ async function searchCinemas(request, response, next) {
   console.log('editing cinema')
   const { q } = request.query
 
-  const cinemas = await Cinema.find({ name: new RegExp(q, 'i') })
+  const searchTerm = new RegExp(q, 'i')
+  const cinemas = await Cinema.find({
+    $or: [
+      { name: searchTerm },
+      { 'address.city': searchTerm },
+      { 'address.postalCode': searchTerm },
+    ],
+  })
 
   console.log({ cinemas })
 
