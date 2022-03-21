@@ -1,5 +1,3 @@
-const { request } = require('http')
-const { hasUncaughtExceptionCaptureCallback } = require('process')
 const Film = require('../models/Film.model.js')
 
 const router = require('express').Router()
@@ -22,7 +20,7 @@ router.get('/summary', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
   try {
     const film = await Film.findById(req.params.id)
-    res.render('film', { film })
+    res.render('film', { film, ...getUrlsForId(req) })
   } catch (error) {
     next(error)
   }
@@ -36,6 +34,50 @@ router.post('/', async (req, res, next) => {
     const newFilm = await Film.create(filmToCreate)
     res.set({ 'Content-Type': 'application/json' })
     res.send(JSON.stringify(newFilm))
+  } catch (error) {
+    next(error)
+  }
+})
+
+const getUrlsForId = (req) => {
+  return {
+    viewUrl: `${req.baseUrl}/${req.params.id}`,
+    editUrl: `${req.baseUrl}/${req.params.id}/edit`,
+    deleteUrl: `${req.baseUrl}/${req.params.id}/delete`,
+  }
+}
+
+router.get('/:id/edit', async (req, res, next) => {
+  try {
+    const film = await Film.findById(req.params.id)
+    res.render('editFilm', { film, ...getUrlsForId(req) })
+  } catch (error) {
+    next(error)
+  }
+})
+
+router.post('/:id/edit', async (req, res, next) => {
+  const { name, year, director } = req.body
+  const filmToEdit = {
+    name,
+    year,
+    director,
+  }
+
+  try {
+    await Film.findByIdAndUpdate(req.params.id, filmToEdit)
+    const { viewUrl } = getUrlsForId(req)
+    res.redirect(viewUrl)
+  } catch (error) {
+    next(error)
+  }
+})
+
+router.post('/:id/delete', async (req, res, next) => {
+  try {
+    await Film.findByIdAndDelete(req.params.id)
+
+    res.redirect(req.baseUrl)
   } catch (error) {
     next(error)
   }

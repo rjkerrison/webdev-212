@@ -1,0 +1,12 @@
+{{#with film}}
+  <h1>Edit: {{name}} 🚀</h1>
+  <form action='{{actionUrl}}' method='POST'>
+    <label for='name'>Name</label>
+    <input name='name' id='name' type='text' value='{{name}}' />
+    <label for='year'>Year</label>
+    <input name='year' id='year' type='number' value='{{year}}' />
+    <label for='director'>Director</label>
+    <input name='director' id='director' type='text' value='{{director}}' />
+    <input type='submit' value='Edit Film' />
+  </form>
+{{/with}}
