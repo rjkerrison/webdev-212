@@ -5,7 +5,7 @@ const router = require('express').Router()
 router.get('/', async (req, res, next) => {
   const reviews = await Review.find()
 
-  res.send(JSON.stringify(reviews))
+  res.render('reviews', { reviews })
 })
 
 module.exports = router
