@@ -4,8 +4,9 @@ const { Schema, model } = require('mongoose')
 const filmSchema = new Schema({
   name: {
     type: String,
-    // unique: true -> Ideally, should be unique, but its up to you
   },
+  director: String,
+  year: Number,
 })
 
 const Film = model('Film', filmSchema)

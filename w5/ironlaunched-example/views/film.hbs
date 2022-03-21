@@ -1,5 +1,10 @@
-<h1>{{film.name}} 🚀</h1>
-<p>
-  {{film.name}}
-  is a film.
-</p>
+{{#with film}}
+  <h1>{{name}} 🚀</h1>
+  <p>
+    {{name}}
+    is a
+    {{year}}
+    film directed by
+    {{director}}.
+  </p>
+{{/with}}
