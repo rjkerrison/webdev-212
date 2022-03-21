@@ -4,8 +4,11 @@ const router = require('express').Router()
 
 router.get('/', async (req, res, next) => {
   const films = await Film.find()
+  films.forEach((film) => {
+    film.viewUrl = `${req.baseUrl}/${film._id}`
+  })
 
-  res.render('films', { films })
+  res.render('films', { films, createUrl: `${req.baseUrl}/create` })
 })
 
 // We put this route ahead of :id so that we don't
@@ -14,6 +17,14 @@ router.get('/summary', async (req, res, next) => {
   const filmCount = await Film.countDocuments()
 
   res.render('summary', { filmCount })
+})
+
+router.get('/create', async (req, res, next) => {
+  try {
+    res.render('newFilm', { actionUrl: req.baseUrl })
+  } catch (error) {
+    next(error)
+  }
 })
 
 // This matches ANY string
@@ -28,12 +39,8 @@ router.get('/:id', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   try {
-    const { name } = req.body
-    const filmToCreate = { name }
-
-    const newFilm = await Film.create(filmToCreate)
-    res.set({ 'Content-Type': 'application/json' })
-    res.send(JSON.stringify(newFilm))
+    await Film.create(req.body)
+    res.redirect(req.baseUrl)
   } catch (error) {
     next(error)
   }

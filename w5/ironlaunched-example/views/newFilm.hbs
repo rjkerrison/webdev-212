@@ -1,0 +1,8 @@
+<h1>New Film 🚀</h1>
+<form action='{{actionUrl}}' method='POST'>
+  {{> textInput value='' fieldName='name' }}
+  <label for='year'>Year</label>
+  <input name='year' id='year' type='number' value='' />
+  {{> textInput value='' fieldName='director' }}
+  <input type='submit' value='Edit Film' />
+</form>

@@ -1,9 +1,13 @@
 <h1>Films 🚀</h1>
 {{#each films}}
   <p>
-    <a href='./{{_id}}/'>
+    <a href='{{viewUrl}}'>
       {{name}}
       ({{year}})
     </a>
   </p>
 {{/each}}
+<p>
+  Or
+  <a href='{{createUrl}}'>Create new film</a>
+</p>
