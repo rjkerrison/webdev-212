@@ -21,8 +21,8 @@ router.get('/summary', async (req, res, next) => {
 // This matches ANY string
 router.get('/:id', async (req, res, next) => {
   try {
-    const films = await Film.find({ _id: req.params.id })
-    res.render('films', { films })
+    const film = await Film.findById(req.params.id)
+    res.render('film', { film })
   } catch (error) {
     next(error)
   }
