@@ -22,9 +22,6 @@ router.get('/summary', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
   try {
     const films = await Film.find({ _id: req.params.id })
-
-    throw new Error('CUSTOM EXCEPTION TO TEST ERROR HANDLING')
-
     res.render('films', { films })
   } catch (error) {
     next(error)
