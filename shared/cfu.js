@@ -16,16 +16,16 @@ window.addEventListener('load', () => {
   }
 
   document.addEventListener('keydown', (event) => {
-    event.preventDefault()
-
     switch (event.key) {
       case 'ArrowUp':
       case 'ArrowLeft':
         scroll(-1)
+        event.preventDefault()
         break
       case 'ArrowDown':
       case 'ArrowRight':
         scroll(1)
+        event.preventDefault()
         break
     }
   })

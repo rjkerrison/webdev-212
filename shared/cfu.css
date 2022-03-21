@@ -54,6 +54,7 @@ section {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1vw;
@@ -103,4 +104,8 @@ picture img {
   max-width: 100%;
   /* Let it grow relative to its width */
   height: auto;
+}
+
+pre {
+  font-size: calc(1rem + 1vw);
 }
