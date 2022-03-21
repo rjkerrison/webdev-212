@@ -1,0 +1,14 @@
+# Dependency directory
+node_modules
+
+# file system generated nonsense
+thumbs.db
+.DS_Store
+
+# Debug log from npm
+npm-debug.log
+# ignore all files ending ".log"
+*.log
+
+# Environment Variables should NEVER be published
+.env
