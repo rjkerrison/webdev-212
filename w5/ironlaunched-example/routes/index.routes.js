@@ -7,10 +7,12 @@ router.get('/', (req, res, next) => {
   res.render('index')
 })
 
-router.get('/films', async (req, res, next) => {
-  const films = await Film.find()
-
-  res.render('films', { films })
+router.get('/random', (req, res, next) => {
+  if (Math.random() > 0.5) {
+    res.render('index')
+  } else {
+    next()
+  }
 })
 
 module.exports = router

@@ -28,6 +28,8 @@ app.locals.appTitle = `${capitalized(
 
 // 👇 Start handling routes here
 const index = require('./routes/index.routes')
+const filmsRoutes = require('./routes/films.routes')
+app.use('/films', filmsRoutes)
 app.use('/', index)
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
