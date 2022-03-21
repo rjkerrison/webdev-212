@@ -28,4 +28,16 @@ router.get('/:id', async (req, res, next) => {
   }
 })
 
+router.post('/', async (req, res, next) => {
+  try {
+    const { name } = req.body
+    const filmToCreate = { name }
+
+    const newFilm = await Film.create(filmToCreate)
+    res.send(JSON.stringify(newFilm))
+  } catch (error) {
+    next(error)
+  }
+})
+
 module.exports = router
