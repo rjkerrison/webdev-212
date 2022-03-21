@@ -34,6 +34,7 @@ router.post('/', async (req, res, next) => {
     const filmToCreate = { name }
 
     const newFilm = await Film.create(filmToCreate)
+    res.set({ 'Content-Type': 'application/json' })
     res.send(JSON.stringify(newFilm))
   } catch (error) {
     next(error)
