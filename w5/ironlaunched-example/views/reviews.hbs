@@ -2,7 +2,9 @@
 {{#each reviews}}
   <h2>
     {{rating}}/5 review of
-    {{film}}
+    {{film.name}}
+    ({{film.year}}) directed by
+    {{film.director}}
   </h2>
   <p>
     {{content}}
