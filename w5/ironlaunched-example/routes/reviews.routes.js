@@ -1,4 +1,3 @@
-const Film = require('../models/Film.model.js')
 const Review = require('../models/Review.model.js')
 
 const router = require('express').Router()
