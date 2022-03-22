@@ -11,7 +11,6 @@ window.addEventListener('load', () => {
     }
 
     const section = sections[sectionIndex]
-    console.log(section, sectionIndex)
     section.scrollIntoView()
   }
 

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css"
+      integrity="sha512-rO+olRTkcf304DQBxSWxln8JXCzTHlKnIdnMUwYvQa9/Jd4cQaNkItIUj6Z4nvW1dqK0SKXLbn9h4KwZTNtAyw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../../shared/cfu.css" />
+    <style>
+      section {
+        color: black;
+      }
+      section:nth-of-type(4n) {
+        background-color: hsl(0, 80%, 70%);
+        color: hsl(0, 76%, 32%);
+      }
+      section:nth-of-type(4n + 1) {
+        background-color: hsl(210, 80%, 70%);
+        color: hsl(230, 49%, 42%);
+      }
+      section:nth-of-type(4n + 2) {
+        background-color: hsl(160, 80%, 70%);
+        color: hsl(140, 49%, 42%);
+      }
+      section:nth-of-type(4n + 3) {
+        background-color: hsl(61, 80%, 70%);
+        color: hsl(30, 49%, 42%);
+      }
+    </style>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"
+      integrity="sha512-BNc7saQYlxCL10lykUYhFBcnzdKMnjx5fp5s5wPucDyZ7rKNwCoqJh1GwEAIhuePEK4WM9askJBRsu7ma0Rzvg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="../../shared/cfu.js"></script>
+    <script>
+      window.addEventListener('load', () => {
+        console.log('Loaded', hljs)
+        hljs.highlightAll()
+      })
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>The Uh-Oh Chronicles</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Wednesday Mid-Week Quiz</h2>
+        <p class="subtitle">The Uh-Oh Chronicles</p>
+      </section>
+      <section>
+        <h2>What is wrong with this code?</h2>
+        <pre><code lang="js" class="language-js"
+            >app.get('/', (request, response, next) => {
+  const bicycles = await Bicycle.find()
+  response.render('bicycles', { bicycles })
+})</code></pre>
+      </section>
+      <section>
+        <h2>What is wrong here?</h2>
+        <pre><code lang="js"
+            >function seed() {
+  connectToDatabase()
+  Photos.deleteMany()
+  Photos.create(photos)
+}</code></pre>
+      </section>
+      <section>
+        <h2>What is missing from this route?</h2>
+        <pre><code lang="js"
+>router.post('/sandwiches/create', async (req, res, next) => {
+  const sandwichToCreate = req.body
+  await Sandwich.create(sandwichToCreate)
+
+  res.redirect('/sandwiches')
+})</code></pre>
+      </section>
+      <section>
+        <h2>What seems smelly about this code?</h2>
+        <pre><code lang="css"
+            >#button1, #button2, #button3 {
+  border-radius: 5px;
+}</code></pre>
+      </section>
+      <section>
+        <h2>What bad thing is going to happen here?</h2>
+        <pre><code lang="html"
+            >&lt;form action='/cheese/create' method='POST'&gt;
+    &lt;label for='name'&gt;
+    Name
+    &lt;/label&gt;
+    &lt;input type='text' id='name' placeholder='e.g. "Brie"' /&gt;
+    &lt;input type='submit' value='Create' /&gt;
+&lt;/form&gt;</code></pre>
+      </section>
+      <section>
+        <h2>What is weird about this?</h2>
+        <pre><code lang="html"
+          >&lt;form action='/sandwiches/create' method='GET'&gt;
+  &lt;label for='name'&gt;
+  Sandwich Name
+  &lt;/label&gt;
+  &lt;input type='text' id='name' name='name' placeholder='Chicken Caesar' /&gt;
+  &lt;input type='submit' value='Create' /&gt;
+&lt;/form&gt;</code></pre>
+      </section>
+      <section>
+        <h2>Why are we seeing a 404?</h2>
+        <p>
+          We have the path <code>'/'</code> in our <code>routes/books.js</code>.
+          We go to <code>localhost:3000/books</code>. We see a 404. What did we
+          forget?
+        </p>
+      </section>
+      <section>
+        <h2>A developer is lost in the jungle. Do they make a sound?</h2>
+      </section>
+      <section>
+        <h2>
+          What is the first step towards having a shoes catalogue page on our
+          website?
+        </h2>
+        <p>We already have an express mongoose app with a database.</p>
+      </section>
+      <section>
+        <h2>Shoes catalogue: what is next?</h2>
+        <p>We have defined our model in <code>model/Shoe.model.js</code>.</p>
+      </section>
+      <section>
+        <h2>Shoes catalogue: what is next?</h2>
+        <p>We have added seeding for our <code>Shoe</code> model.</p>
+      </section>
+      <section>
+        <h2>Shoes catalogue: what is next?</h2>
+        <p>
+          We have added the following route for our <code>Shoe</code> model.
+        </p>
+        <pre><code lang="js">router.get('/shoes', async (req, res, next) => {
+  const shoes = await Shoe.find()
+  res.send(JSON.stringify(shoes))
+})</code></pre>
+      </section>
+      <section>
+        <h2>Shoes catalogue: how do we simplify this?</h2>
+        <pre><code lang="js"
+>const shoes = await Shoe.find()
+for (let shoe of shoes) {
+  const id = shoe.designer
+  shoe.designer = await Designer.findById(id)
+}</code></pre>
+      </section>
+      <section>
+        <h2>Shoes catalogue: How do we list shoes by a designer?</h2>
+        <p>We already have this code for <code>/designers</code>.</p>
+        <pre><code lang="js">router.get('/designers/:id', async (req, res, next) => {
+  try {
+    const designer = await Designer.findById(req.params.id)
+    res.render('designers/list', { designer })
+  } catch (error) {
+    console.error(error)
+    next()
+  }
+})</code></pre>
+      </section>
+      <section>
+        <h2>Why is this code smelly?</h2>
+        <pre><code lang="js">router.post('/doctors', async (req, res, next) => {
+  try {
+    const doctor = req.body
+    await Doctor.create(doctor)
+    res.json({ data: doctor })
+  } catch (error) {
+    console.error(error)
+    res.json({ error: 'There has been an error.' })
+  }
+})</code></pre>
+      </section>
+      <section>
+        <h2>What do we do when we don't remember how to do something?</h2>
+      </section>
+      <section>
+        <h2>How can we build big things?</h2>
+      </section>
+      <section>
+        <h2>How did the first bridge over the Niagara Falls start?</h2>
+      </section>
+      <section>
+        <h2>The End</h2>
+      </section>
+    </main>
+  </body>
+</html>

@@ -20,6 +20,7 @@ body {
 
 header {
   position: fixed;
+  z-index: 1;
   top: 0;
   width: 100vw;
   text-align: center;
@@ -106,6 +107,42 @@ picture img {
   height: auto;
 }
 
+p {
+  font-family: 'Varela Round';
+  font-size: calc(1.5rem + 1.5vw);
+  text-align: center;
+  margin: 0;
+}
+p code {
+  color: black;
+}
+p.subtitle {
+  font-size: calc(2rem + 2vw);
+}
 pre {
   font-size: calc(1rem + 1vw);
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+}
+
+body {
+  counter-reset: sections;
+}
+
+section {
+  position: relative;
+}
+
+section:not(:first-of-type)::after {
+  counter-increment: sections;
+  position: absolute;
+  left: 0;
+  font-size: calc(2rem + 2vw);
+  opacity: 0.5;
+  padding: 0.5em;
+  bottom: 0;
+  content: counter(sections);
 }
