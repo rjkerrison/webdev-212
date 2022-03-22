@@ -1,4 +1,5 @@
 const Film = require('../models/Film.model.js')
+const Review = require('../models/Review.model.js')
 
 const router = require('express').Router()
 
@@ -31,7 +32,10 @@ router.get('/create', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
   try {
     const film = await Film.findById(req.params.id)
-    res.render('film', { film, ...getUrlsForId(req) })
+
+    const reviews = await Review.find({ film: req.params.id })
+
+    res.render('film', { film, ...getUrlsForId(req), reviews })
   } catch (error) {
     next(error)
   }
