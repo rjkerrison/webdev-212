@@ -90,11 +90,13 @@ router.post('/signup', isLoggedOut, (req, res) => {
 })
 
 router.get('/login', isLoggedOut, (req, res) => {
-  res.render('auth/login')
+  const attemptedUrl = req.query.return
+
+  res.render('auth/login', { attemptedUrl })
 })
 
 router.post('/login', isLoggedOut, (req, res, next) => {
-  const { username, password } = req.body
+  const { username, password, attemptedUrl } = req.body
 
   if (!username) {
     return res.status(400).render('auth/login', {
@@ -129,7 +131,7 @@ router.post('/login', isLoggedOut, (req, res, next) => {
         }
         req.session.user = user
         // req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
-        return res.redirect('/')
+        return res.redirect(attemptedUrl || '/')
       })
     })
 
