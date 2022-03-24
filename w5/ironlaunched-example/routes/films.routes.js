@@ -1,3 +1,4 @@
+const Favourite = require('../models/Favourite.model.js')
 const Film = require('../models/Film.model.js')
 const Review = require('../models/Review.model.js')
 
@@ -36,6 +37,27 @@ router.get('/:id', async (req, res, next) => {
     const reviews = await Review.find({ film: req.params.id })
 
     res.render('film', { film, ...getUrlsForId(req), reviews })
+  } catch (error) {
+    next(error)
+  }
+})
+
+// POST /films/:id/favourites
+router.post('/:id/favourites', async (req, res, next) => {
+  try {
+    const userId = req.body.userId
+    const film = await Film.findById(req.params.id)
+    const favourite = await Favourite.create({
+      user: userId,
+      film: film.id,
+    })
+
+    const data = {
+      liked: true,
+      count: await Favourite.countDocuments({ film: film.id }),
+    }
+
+    res.json(data)
   } catch (error) {
     next(error)
   }

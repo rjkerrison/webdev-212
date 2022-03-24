@@ -3,6 +3,7 @@
 const mongoose = require('mongoose')
 const Film = require('../models/Film.model')
 const Review = require('../models/Review.model')
+const User = require('../models/User.model')
 
 const MONGO_URI =
   process.env.MONGODB_URI || 'mongodb://localhost/ironlaunched-example'
@@ -44,6 +45,16 @@ const films = [
 Film.deleteMany()
   .then(() => {
     return Review.deleteMany()
+  })
+  .then(() => {
+    return User.deleteMany()
+  })
+  .then(() => {
+    return User.create({
+      username: 'paddington',
+      // this should be some kind of hashed password
+      password: '',
+    })
   })
   .then(() => {
     return Film.create(films)

@@ -14,8 +14,48 @@
 <form action='{{deleteUrl}}' method='POST'>
   <input type='submit' value='DELETE' />
 </form>
+
+<button data-film="{{film.id}}">
+  ⭐️
+</button>
+
 <h2>Reviews</h2>
 {{#each reviews}}
   <h3>{{rating}}/5 of {{../film/name}}</h3>
   <p>{{content}}</p>
 {{/each}}
+
+
+
+<script type="text/javascript">
+const button = document.querySelector('button')
+const filmId = button.dataset.film
+// when the favourite button is clicked
+button.addEventListener('click', favouriteThisFilm)
+
+async function favouriteThisFilm() {
+  // make a post request to /films/:id/favourites
+  let data = JSON.stringify({
+    "userId": "623c49c1623b97c51cc1750a"
+  });
+
+  let config = {
+    method: 'post',
+    url: `http://localhost:3000/films/${filmId}/favourites`,
+    headers: { 
+      'Content-Type': 'application/json'
+    },
+    data : data
+  };
+
+  try {
+    const response = await axios(config)
+    console.log(JSON.stringify(response.data));
+    button.textContent += 'favourited'
+    button.textContent += response.data.count
+  }
+  catch(error) {
+    console.log(error);
+  }
+}
+</script>
