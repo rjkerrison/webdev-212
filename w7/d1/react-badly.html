@@ -1,0 +1,57 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add React to a Website</title>
+    <meta charset="UTF-8" />
+
+    <link rel="stylesheet" href="./src/styles.css" />
+
+    <!-- Load Babel - used to parse JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- React's core library-->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <!-- ReactDOM library renders the content created with React to the DOM. -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const name = 'Robin'
+
+      // what about having a property to define?
+      // this is a COMPONENT
+      const Heading = (props) => <h2>{props.text || 'Subheading'}</h2>
+
+      // Group things in a fragment <> if necessary,
+      // or otherwise have one element
+      const element = (
+        <>
+          <Heading />
+          <p> React is a front-end JavaScript library </p>
+        </>
+      )
+
+      ReactDOM.render(
+        <div>
+          <h1>Hello {name}!</h1>
+          {/* Component props look like HTML attributes */}
+          {/* Rendering a component - uses HTML-like syntax */}
+          <Heading text={Math.random() > 0.5 ? 'HOWDY' : 'HOLA'} />
+          {/* Injecting an (already existing) element */}
+          {element}
+        </div>,
+        document.getElementById('root')
+      )
+    </script>
+  </body>
+</html>
