@@ -28,6 +28,7 @@ header {
 
 h1 {
   font-family: 'Varela Round';
+  font-size: 3rem;
   padding: 0.25rem;
   margin: 0;
   color: hsla(58, 84%, 63%, 0.75);

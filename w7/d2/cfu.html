@@ -4,26 +4,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Checks for Understanding</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css"
-      integrity="sha512-rO+olRTkcf304DQBxSWxln8JXCzTHlKnIdnMUwYvQa9/Jd4cQaNkItIUj6Z4nvW1dqK0SKXLbn9h4KwZTNtAyw=="
+      integrity="sha512-rO+olRTkcf304DQBxSWxln8JXCzTHlKnIdnMUwYvQa9/Jd4cQaNkItIUj6Z6nvW1dqK0SKXLbn9h4KwZTNtAyw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="../../shared/cfu.css" />
     <style>
-      section:nth-of-type(4n) {
-        background-color: hsl(320, 49%, 42%);
+      body {
+        font-family: 'Varela Round';
       }
-      section:nth-of-type(4n + 1) {
+      .paddington {
+        font-family: 'Paddington';
+      }
+
+      section:nth-of-type(7n) {
+        background-color: hsl(280, 49%, 42%);
+      }
+      section:nth-of-type(7n + 1) {
         background-color: hsl(230, 49%, 42%);
       }
-      section:nth-of-type(4n + 2) {
-        background-color: hsl(140, 49%, 42%);
+      section:nth-of-type(7n + 2) {
+        background-color: hsl(130, 49%, 42%);
       }
-      section:nth-of-type(4n + 3) {
+      section:nth-of-type(7n + 6) {
+        background-color: hsl(330, 49%, 42%);
+      }
+      section:nth-of-type(7n + 4) {
+        background-color: hsl(0, 49%, 42%);
+      }
+      section:nth-of-type(7n + 5) {
+        background-color: hsl(50, 69%, 62%);
+        color: black;
+      }
+      section:nth-of-type(7n + 3) {
         background-color: hsl(30, 49%, 42%);
       }
     </style>
@@ -59,7 +76,8 @@
 
     <script type="text/babel">
       const questions = [
-        <h2>React recap</h2>,
+        <h2 className="paddington">React React</h2>,
+        <h2>What is a framework?</h2>,
         <h2>Why use a framework?</h2>,
         <h2>What are the building blocks in React called?</h2>,
         <h2>How do we define a component?</h2>,
@@ -74,6 +92,34 @@
         <h2>Which browser extension did we install?</h2>,
         <h2>Why are our full-stack apps going to use two frameworks?</h2>,
         <h2>How will our React frontend talk to our Express backend?</h2>,
+        <h2>
+          What are <i>props</i>?
+        </h2>,
+        <h2>What does "state" mean in an application?</h2>,
+        <h2>Why are we learning React?</h2>,
+        <h2>What is the virtual DOM?</h2>,
+        <h2>
+          A user is on your website. They click on a button. How do we know they
+          clicked on the button?
+        </h2>,
+        <>
+          <h2>
+            Explain what each of the two different tokens called "description"
+            are doing here.
+          </h2>
+          <pre>
+            <code>
+              return (&lt;MyComponent description={'{'}description{'}'} /&gt;)
+            </code>
+          </pre>
+        </>,
+        <h2>
+          Which two HTML attributes are renamed because of JavaScript reserved
+          keywords?
+        </h2>,
+        <h2>Which other HTML attributes are exceptionally camelCased?</h2>,
+        <h2>How can we handle state changes in our React application?</h2>,
+        <h2 className="paddington">The End</h2>,
       ]
 
       const QuestionSection = ({ element }) => <section>{element}</section>
@@ -81,7 +127,7 @@
       ReactDOM.render(
         <>
           <header>
-            <h1>React Day 1 Recap</h1>
+            <h1>React: Day One Recap</h1>
           </header>
           <main>
             {questions.map((q, i) => (
