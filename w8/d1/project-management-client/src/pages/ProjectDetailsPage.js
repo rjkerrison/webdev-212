@@ -44,6 +44,9 @@ function ProjectDetailsPage(props) {
         ))}
 
       <Link to="/projects">Back to projects</Link>
+      {project && (
+        <Link to={`/projects/${projectId}/edit`}>Edit {project.title}</Link>
+      )}
     </div>
   )
 }

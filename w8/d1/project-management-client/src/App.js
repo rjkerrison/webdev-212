@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import HomePage from './pages/HomePage'
 import ProjectListPage from './pages/ProjectPage'
 import ProjectDetailsPage from './pages/ProjectDetailsPage'
+import EditProjectPage from './pages/EditProjectPage'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/projects" element={<ProjectListPage />} />
         <Route path="/projects/:projectId" element={<ProjectDetailsPage />} />
+        <Route path="/projects/:projectId/edit" element={<EditProjectPage />} />
       </Routes>
     </div>
   )
