@@ -66,4 +66,21 @@ router.put('/projects/:projectId', async (req, res, next) => {
   }
 })
 
+router.delete('/projects/:projectId', async (req, res, next) => {
+  try {
+    const { projectId } = req.params
+
+    if (!mongoose.Types.ObjectId.isValid(projectId)) {
+      res.status(400).json({ message: 'Specified id is not valid' })
+      return
+    }
+
+    await Project.findByIdAndRemove(projectId)
+
+    res.status(204).send()
+  } catch (err) {
+    res.json(err)
+  }
+})
+
 module.exports = router
