@@ -38,6 +38,18 @@ function EditProjectPage(props) {
     navigate(`/projects/${projectId}`)
   }
 
+  const deleteProject = async () => {
+    try {
+      // Make a DELETE request to delete the project
+
+      await axios.delete(`${API_URL}/api/projects/${projectId}`)
+
+      navigate('/projects')
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   return (
     <div className="EditProjectPage">
       <h3>Edit the Project</h3>
@@ -60,6 +72,7 @@ function EditProjectPage(props) {
 
         <input type="submit" value="Submit" />
       </form>
+      <button onClick={deleteProject}>Delete {title || 'project'}</button>
     </div>
   )
 }
