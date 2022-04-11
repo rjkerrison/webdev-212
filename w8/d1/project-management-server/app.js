@@ -22,6 +22,9 @@ app.use('/api', allRoutes)
 const projectRouter = require('./routes/projects.routes')
 app.use('/api', projectRouter)
 
+const taskRouter = require('./routes/tasks.routes')
+app.use('/api', taskRouter)
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app)
 
