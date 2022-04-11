@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
-
-const API_URL = 'http://localhost:5005'
+import { API_URL } from '../consts'
 
 const AddProject = ({ refreshProjects }) => {
   const [title, setTitle] = useState('')
