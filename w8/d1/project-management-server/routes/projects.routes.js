@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const { default: mongoose } = require('mongoose')
 const Project = require('../models/Project.model')
 const Task = require('../models/Task.model')
 
@@ -30,8 +31,34 @@ router.get('/projects', async (req, res, next) => {
 
 router.get('/projects/:projectId', async (req, res, next) => {
   try {
-    const project = await Project.findById(req.params.projectId)
+    const { projectId } = req.params
+
+    if (!mongoose.Types.ObjectId.isValid(projectId)) {
+      res.status(400).json({ message: 'Specified id is not valid' })
+      return
+    }
+
+    const project = await Project.findById(projectId)
     project._doc.tasks = await Task.find({ project: project._id })
+
+    res.json(project)
+  } catch (err) {
+    res.json(err)
+  }
+})
+
+router.put('/projects/:projectId', async (req, res, next) => {
+  try {
+    const { projectId } = req.params
+
+    if (!mongoose.Types.ObjectId.isValid(projectId)) {
+      res.status(400).json({ message: 'Specified id is not valid' })
+      return
+    }
+
+    const project = await Project.findByIdAndUpdate(projectId, req.body, {
+      new: true,
+    })
 
     res.json(project)
   } catch (err) {
