@@ -1,11 +1,23 @@
 import { useState } from 'react'
 import axios from 'axios'
+import { API_URL } from '../consts'
 
-function AddTask(props) {
+function AddTask({ projectId, refreshProject }) {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
 
-  const handleSubmit = (e) => {}
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const requestBody = { title, description, projectId }
+    try {
+      await axios.post(`${API_URL}/api/tasks`, requestBody)
+      setTitle('')
+      setDescription('')
+      refreshProject()
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   return (
     <div className="AddTask">
