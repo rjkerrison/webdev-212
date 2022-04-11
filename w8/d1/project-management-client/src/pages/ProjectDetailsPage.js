@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
 import { API_URL } from '../consts'
+import AddTask from '../components/AddTask'
 
 function ProjectDetailsPage(props) {
   const [project, setProject] = useState(null)
@@ -33,6 +34,8 @@ function ProjectDetailsPage(props) {
           <p>{project.description}</p>
         </>
       )}
+
+      <AddTask refreshProject={getProject} projectId={projectId} />
 
       {project &&
         project.tasks.map((task) => (
