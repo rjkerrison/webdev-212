@@ -1,10 +1,11 @@
 const router = require('express').Router()
 const { default: mongoose } = require('mongoose')
+const { isAuthenticated } = require('../middleware/jwt.middleware')
 const Project = require('../models/Project.model')
 const Task = require('../models/Task.model')
 
 //  POST /api/projects  -  Creates a new project
-router.post('/projects', async (req, res, next) => {
+router.post('/projects', isAuthenticated, async (req, res, next) => {
   const { title, description } = req.body
 
   try {

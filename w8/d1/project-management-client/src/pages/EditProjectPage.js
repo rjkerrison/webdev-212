@@ -28,12 +28,15 @@ function EditProjectPage(props) {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault()
+    const storedToken = localStorage.getItem('authToken')
 
     // Create an object representing the body of the PUT request
     const requestBody = { title, description }
 
     // Make a PUT request to update the project
-    await axios.put(`${API_URL}/api/projects/${projectId}`, requestBody)
+    await axios.put(`${API_URL}/api/projects/${projectId}`, requestBody, {
+      headers: { Authorization: `Bearer ${storedToken}` },
+    })
 
     navigate(`/projects/${projectId}`)
   }
@@ -41,8 +44,11 @@ function EditProjectPage(props) {
   const deleteProject = async () => {
     try {
       // Make a DELETE request to delete the project
+      const storedToken = localStorage.getItem('authToken')
 
-      await axios.delete(`${API_URL}/api/projects/${projectId}`)
+      await axios.delete(`${API_URL}/api/projects/${projectId}`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
 
       navigate('/projects')
     } catch (err) {
