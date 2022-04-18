@@ -65,6 +65,10 @@ section h2 {
   font-size: calc(1rem + 4vw);
   text-align: center;
 }
+section h3 {
+  font-size: calc(0.75rem + 3vw);
+  text-align: center;
+}
 
 section:nth-of-type(2n) {
   background-color: hsl(82, 39%, 42%);
@@ -146,4 +150,8 @@ section:not(:first-of-type)::after {
   padding: 0.5em;
   bottom: 0;
   content: counter(sections);
+}
+
+a {
+  color: inherit;
 }
