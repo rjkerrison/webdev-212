@@ -135,8 +135,9 @@
         <>
           <h2 className="paddington">Prerequisites</h2>
           <ul>
+            <li>A MongoDB Atlas database</li>
             <li>A REST API backend deployed to Heroku</li>
-            <li>Postman tests for your deployed API</li>
+            <li>Postman tests for your deployed API (so you know it works)</li>
             <li>
               <p>A React Frontend repo pushed to Github</p>
               <aside>
@@ -245,7 +246,7 @@
           </p>
           <pre>
             <code>
-              {`export const API_URL = process.env.API_URL || 'http://localhost:5005/api'`}
+              {`export const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5005/api'`}
             </code>
           </pre>
           <p>
