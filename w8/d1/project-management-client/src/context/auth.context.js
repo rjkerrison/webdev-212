@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext } from 'react'
+import { useState, useEffect, createContext, useCallback } from 'react'
 import axios from 'axios'
 import { API_URL } from '../consts'
 
@@ -22,45 +22,44 @@ function AuthProviderWrapper(props) {
     localStorage.removeItem('authToken')
   }
 
-  const authenticateUser = () => {
+  const authenticateUser = useCallback(async () => {
     // Get the stored token from the localStorage
     const storedToken = localStorage.getItem('authToken')
 
-    // If the token exists in the localStorage
-    if (storedToken) {
-      // We must send the JWT token in the request's "Authorization" Headers
-      axios
-        .get(`${API_URL}/api/auth/verify`, {
+    try {
+      // If the token exists in the localStorage
+      if (storedToken) {
+        // We must send the JWT token in the request's "Authorization" Headers
+        const response = await axios.get(`${API_URL}/api/auth/verify`, {
           headers: { Authorization: `Bearer ${storedToken}` },
         })
-        .then((response) => {
-          console.log('USER IS LOGGED IN!')
 
-          // If the server verifies that JWT is valid
-          const user = response.data
-          // Update state variables
-          setIsLoggedIn(true)
-          if (user.roles?.admin) {
-            setIsAdmin(true)
-          }
-          setIsLoading(false)
-          setUser(user)
-        })
-        .catch((error) => {
-          console.log('USER IS LOGGED OUT!')
-          // If the server sends an error response (invalid token)
-          // Update state variables
-          setIsLoggedIn(false)
-          setIsLoading(false)
-          setUser(null)
-        })
-    } else {
-      // If the token is not available (or is removed)
+        console.log('USER IS LOGGED IN!')
+
+        // If the server verifies that JWT is valid
+        const user = response.data
+        // Update state variables
+        setIsLoggedIn(true)
+        if (user.roles?.admin) {
+          setIsAdmin(true)
+        }
+        setIsLoading(false)
+        setUser(user)
+      } else {
+        // If the token is not available (or is removed)
+        setIsLoggedIn(false)
+        setIsLoading(false)
+        setUser(null)
+      }
+    } catch (error) {
+      console.log('USER IS LOGGED OUT!')
+      // If the server sends an error response (invalid token)
+      // Update state variables
       setIsLoggedIn(false)
       setIsLoading(false)
       setUser(null)
     }
-  }
+  }, [])
 
   const logOutUser = () => {
     // To log out the user, remove the token
@@ -72,7 +71,7 @@ function AuthProviderWrapper(props) {
 
   useEffect(() => {
     authenticateUser()
-  }, [])
+  }, [authenticateUser])
 
   return (
     <AuthContext.Provider
