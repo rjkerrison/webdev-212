@@ -2,6 +2,13 @@
 
 A model of robots on a rectangular planet.
 
+This example is based on a real technical test Robin did for a previous role. [Robin's solution to the marsbot challenge](https://github.com/rjkerrison/marsbot) is available on Github.
+
+The challenge is designed to be approachable for developers at any level,
+and to allow them to showcase what they think good code looks like.
+As well as looking at your final code and the comments you make,
+senior developers reviewing your repository can look at your commit history to see how you broke the task down.
+
 ## Background
 
 Imagine you've got a rectangular planet, and some robots which you want to explore that planet.
@@ -15,6 +22,11 @@ This program models this world for you.
 ## Technical requirements
 
 Your task: create a programme which takes in `instructions.txt` and outputs the result of a scenario.
+
+You can complete the challenge in any language you like, as long as it can run in command-line and it reads instructions from a text file.
+
+You must deploy your solution in a publicly hosted git repository.
+Provide a README with instructions on how to run your program.
 
 ### Format
 
