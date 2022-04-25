@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cohort Awards</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- integrity="sha512-rO+olRTkcf304DQBxSWxln8JXCzTHlKnIdnMUwYvQa9/Jd4cQaNkItIUj6Z6nvW1dqK0SKXLbn9h4KwZTNtAyw==" -->
+    <link rel="stylesheet" href="../../shared/cfu.css" />
+    <style>
+      body {
+        font-family: 'Varela Round';
+      }
+      .paddington {
+        font-family: 'Paddington';
+      }
+      section {
+        display: grid;
+        grid-auto-rows: minmax(0, 1fr);
+        grid-template-rows: auto;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        grid-auto-flow: row;
+        padding: 4rem 1rem 1rem;
+      }
+      p {
+        font-size: 7rem;
+      }
+      p code {
+        color: hsl(50, 69%, 62%);
+      }
+
+      section:nth-of-type(5n) {
+        background-color: hsl(280, 49%, 42%);
+      }
+      section:nth-of-type(5n + 1) {
+        background-color: hsl(230, 49%, 42%);
+      }
+      section:nth-of-type(5n + 2) {
+        background-color: hsl(130, 49%, 42%);
+      }
+      section:nth-of-type(5n + 3) {
+        background-color: hsl(330, 49%, 42%);
+      }
+      section:nth-of-type(5n + 4) {
+        background-color: hsl(0, 49%, 42%);
+      }
+
+      ul li {
+        font-family: 'Varela Round';
+        font-size: calc(1.5rem + 1.5vw);
+        text-align: center;
+        margin: 0;
+        display: list-item;
+      }
+
+      .picture-container {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      picture {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+      }
+      picture img {
+        display: block;
+        max-height: 100%;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+      }
+      h1 {
+        background: none;
+        font-size: 10rem;
+        color: hsl(50, 69%, 62%);
+        mix-blend-mode: normal;
+        background-blend-mode: normal;
+      }
+    </style>
+    <!-- Load Babel - used to parse JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- React's core library-->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <!-- ReactDOM library renders the content created with React to the DOM. -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"
+      integrity="sha512-BNc7saQYlxCL10lykUYhFBcnzdKMnjx5fp5s5wPucDyZ7rKNwCoqJh1GwEAIhuePEK4WM9askJBRsu7ma0Rzvg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="../../shared/cfu.js"></script>
+    <script>
+      window.addEventListener('load', () => {
+        console.log('Loaded', hljs)
+        hljs.highlightAll()
+      })
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const Picture = ({ filename }) => {
+        return (
+          <>
+            <div className="picture-container">
+              <picture>
+                <img src={`./images/${filename}`} alt={filename} />
+              </picture>
+            </div>
+          </>
+        )
+      }
+
+      const awards = [
+        ['Best dressed', 'Gary'],
+        ['Best Delicious Bribes', 'Marco Zampini'],
+        ['Best Seeding (database or coffee)', 'Brian'],
+        ['Technical Award for Insanely Complicated Logic', 'Matt'],
+        ['Design Award', 'Léo'],
+        ['Best Praisegiver', 'Noa'],
+        ['Most French Learnt', 'Akanksha'],
+        ['Head of Games', 'Clément'],
+        ['Best Ascent out of the Valley of Despair', 'Alex'],
+        ['Unpaid Teaching Assistant', 'Alper'],
+        ['Outstanding Questions', 'Ibrahim'],
+        ['Best Dreams', 'Tristan'],
+        ['Late Addition Award', 'Ting'],
+        ['Funniest Memes In Presentations', 'Laurie'],
+        ['Best Coding from a Chalet', 'Alexandre'],
+        ['Most Resistant to doing the Labs', 'Abdou'],
+        ['Most Job Interviews', 'Anh'],
+        ['Best Military Defence Against Russia', 'Marco Muller'],
+      ]
+
+      const questions = [
+        <h1 className="paddington">Cohort Awards!</h1>,
+        <p>Welcome to the cohort awards!</p>,
+        ...awards.flatMap(([category, name]) => [
+          <h2>{category}</h2>,
+          <h2 className="paddington">{name}!</h2>,
+        ]),
+        <>
+          <h2 className="paddington">Thank you!</h2>
+          <p>The end.</p>
+        </>,
+      ]
+
+      const QuestionSection = ({ element }) => <section>{element}</section>
+
+      ReactDOM.render(
+        <>
+          <main>
+            {questions.map((q, i) => (
+              <QuestionSection element={q} key={i} />
+            ))}
+          </main>
+        </>,
+        document.getElementById('root'),
+        () => hljs.highlightAll()
+      )
+    </script>
+  </body>
+</html>
